@@ -140,16 +140,16 @@ export default function ExplainerSection() {
             <source src="/videos/Popcorn_V4.1.mp4" type="video/mp4" />
           </video>
         </div>
-        <p className="text-4xl mt-16 mb-8">Earn high returns on your crypto while funding public goods</p>
-        <p className="w-[80%]">It&#39;s now easy to deposit your crypto, optimise your yield, and create positive global impact at the same time.</p>
+        <p className="text-4xl mt-16 mb-8">Optimize your yield with automated yield strategies & call options on POP</p>
+        <p className="w-[80%]">Use your vote-escrow POP to vote on which vault strategies you can boost</p>
         <div className="flex flex-row border-x-0 border-y-customLightGray border-b-2 font-bold w-[80%] mb-16">
           <p className="px-1 py-2 w-full mt-4 leading-7">Create Account</p>
           <SecondaryActionButton label="" />
         </div>
         <div className="h-[1300px] flex flex-col gap-y-4">
-          <HeroCards title="Deposit" color="bg-[#EBE7D4]" imgUri="/images/blackCircles.svg" description="Connect your web3 wallet, deposit your stablecoins and blue chip crypto assets into Popcorn’s DeFi products." />
-          <HeroCards title="Do Well" color="bg-[#121A27]" textColor="text-white" imgUri="/images/whiteSmile.svg" description="Optimize your returns with non-custodial vault strategies and staking products." />
-          <HeroCards title="Do Good" color="bg-[#FFE650]" imgUri="/images/blackSmiles.svg" description="Fund community-selected nonprofit and social impact organisations at no additional cost." />
+          <HeroCards title="Deposit" color="bg-[#EBE7D4]" icon="/images/blackCircles.svg" description="Connect your web3 wallet, deposit your stablecoins and blue chip crypto assets into Popcorn’s DeFi products." />
+          <HeroCards title="Do Well" color="bg-[#121A27]" textColor="text-white" icon="/images/whiteSmile.svg" description="Optimize your returns with non-custodial vault strategies and staking products." />
+          <HeroCards title="Do Good" color="bg-[#FFE650]" icon="/images/blackSmiles.svg" description="Fund community-selected nonprofit and social impact organisations at no additional cost." />
         </div>
       </div>
     </section>
