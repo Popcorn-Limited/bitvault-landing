@@ -26,8 +26,8 @@ export default function ProductsSection() {
           />
           <ProductDisplay
             number="02"
-            title="Vault Boosts"
-            description="Lock your liquidity to boost your returns up to 5X."
+            title="Boost"
+            description="Stake your POP LP for vePOP (vote-escrow) to boost your yield with call options on POP."
             url=""
             image={(color) => <PointyBunny color={color} />}
             animateColor="#FA5A6E"
