@@ -5,25 +5,25 @@ import Link from "next/link";
 
 export default function VaultCraftSection() {
 
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
-  const handleScroll = () => {
-    const element = document.getElementById('slide-in-element');
-    if (element) {
-      const elementTop = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (elementTop + 500 < windowHeight) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    }
-  };
+  // const handleScroll = () => {
+  //   const element = document.getElementById('slide-in-element');
+  //   if (element) {
+  //     const elementTop = element.getBoundingClientRect().top;
+  //     const windowHeight = window.innerHeight;
+  //     if (elementTop + 500 < windowHeight) {
+  //       setIsVisible(true);
+  //     } else {
+  //       setIsVisible(false);
+  //     }
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   return (
     <section className="w-screen 2xl:mx-auto 2xl:overflow-x-hidden 2xl:max-w-[1800px]">
@@ -42,13 +42,13 @@ export default function VaultCraftSection() {
           <div className="px-6 smmd:px-8 md:px-12 lglaptop:px-20">
 
             <div className="w-full h-fit flex-row flex justify-between items-end 2xl:max-w-[1600px]">
-              <div id="slide-in-element" className={`transition-transform mt-[80px] smmd:w-[60vw] 2xl:max-w-[1400px] w-full duration-[1200ms] ${isVisible ? 'smmd:translate-x-0' : 'smmd:-translate-x-full'}`}>
+              <div id="slide-in-element" className={`transition-transform mt-[80px] smmd:w-[60vw] 2xl:max-w-[1400px] w-full duration-[1200ms] smmd:translate-x-0`}>
                 <h1 className="mb-6 font-normal min-h-[80px] text-white leading-[60px] smmd:leading-[72px] text-left text-4xl smmd:text-8xl smmd:mt-0">
                   Build custom, automated DeFi strategies in minutes with <b>Vaultcraft</b>
                 </h1>
               </div>
 
-              <div className={`transition-transform hidden smmd:flex flex-col gap-y-2 delay-[100ms] duration-[600ms] ${isVisible ? '-translate-x-0' : 'translate-x-full'}`}>
+              <div className={`transition-transform hidden smmd:flex flex-col gap-y-2 delay-[100ms] duration-[600ms] -translate-x-0`}>
                 <p className="text-white text-base"><b>VaultCraft</b> by</p>
                 <div className="flex flex-row items-center gap-x-2 justify-end">
                   <img src="/images/icons/popLogoWhite.svg" className="h-5 w-5" />
@@ -60,7 +60,7 @@ export default function VaultCraftSection() {
 
 
             <div className="w-full 2xl:max-w-[1600px] flex smmd:flex-row flex-col-reverse justify-between items-start smmd:mt-24 mt-6">
-              <div className={`${isVisible ? 'smmd:translate-x-0' : 'smmd:-translate-x-full'} transition-transform delay-[200ms] duration-[700ms] flex flex-col smmd:w-[338px] xl:w-[460px] w-[80%] self-end smmd:self-start mb-[100px] mr-8 smmd:mr-44 mt-10 smmd:mt-0`}>
+              <div className={`smmd:translate-x-0 transition-transform delay-[200ms] duration-[700ms] flex flex-col smmd:w-[338px] xl:w-[460px] w-[80%] self-end smmd:self-start mb-[100px] mr-8 smmd:mr-44 mt-10 smmd:mt-0`}>
                 <p className="text-lg text-white">
                   With VaultCraft, you can easily create a cross-chain asset strategy in just a few clicks. Whether you&apos;re new to DeFi, a developer or a portfolio manager, VaultCraft makes it easy to create custom vaults that fit your specific needs.
                 </p>
@@ -73,7 +73,7 @@ export default function VaultCraftSection() {
                   <SecondaryActionButton label="" customArrowColor="FFFFFF" />
                 </Link>
               </div>
-              <div className={`${isVisible ? 'smmd:-translate-x-0' : 'smmd:translate-x-full'} bg-black transition-transform w-full smmd:w-fit delay-[200ms] duration-[800ms] grow h-[230px] rounded-xl 2xl:w-[1400px] smmd:h-[450px] ml-8 smmd:ml-0`} >
+              <div className={`smmd:-translate-x-0 bg-black transition-transform w-full smmd:w-fit delay-[200ms] duration-[800ms] grow h-[230px] rounded-xl 2xl:w-[1400px] smmd:h-[450px] ml-8 smmd:ml-0`} >
                 <video className="w-full h-full object-cover rounded-xl" id='video' controls poster='/images/vaultCraftThumbnail.png'>
                   <source src="/videos/Twitter_Video.mp4" type="video/mp4" />
                 </video>

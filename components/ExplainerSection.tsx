@@ -91,7 +91,7 @@ export default function ExplainerSection() {
             </video>
           </div> */}
 
-          <div className="flex flex-col w-screen xl:w-[1800px] border-box">
+          <div className="flex flex-col">
 
             <div className="flex flex-col w-[338px] mb-[100px] ml-[24px] smmd:mb-12 xl:mb-36">
               <p className="text-lg">
@@ -107,7 +107,7 @@ export default function ExplainerSection() {
               </Link>
             </div>
 
-            <div className="w-full h-full flex-row flex gap-x-6 xl:w-[1800px] px-[24px]">
+            <div className="w-full h-full flex flex-row items-center gap-x-4">
               <HeroCards
                 title="Deposit"
                 color="bg-[#EBE7D4]"

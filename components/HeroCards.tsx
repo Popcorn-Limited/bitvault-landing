@@ -10,14 +10,14 @@ interface HeroCardProps {
 }
 export default function HeroCards({ title, description, animation, icon, color, textColor }: HeroCardProps) {
   return (
-    <div className={`w-full h-full flex flex-col justify-between cursor-normal select-none rounded-xl ${color + ' ' + textColor} p-8`}>
+    <div className={`w-full md:w-1/3 h-full flex flex-col justify-between cursor-normal select-none rounded-xl ${color + ' ' + textColor} p-8`}>
       <div>
         <p className="text-4xl mb-4">{title}</p>
         <p className="w-[65%] text-lg">{description}</p>
       </div>
       <div className="w-full flex flex-col justify-end items-end">
         {animation &&
-          <div className="w-48 h-48" >
+          <div className="w-44 h-44" >
             <Lottie options={{
               loop: true,
               autoplay: true,

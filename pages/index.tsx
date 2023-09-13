@@ -29,7 +29,7 @@ const IndexPage = () => {
       <VaultCraftSection />
       <CommunitySection />
       <ImpactSection />
-      <FaqSection />
+      {/* <FaqSection /> */}
       <Footer />
     </div >
   );
