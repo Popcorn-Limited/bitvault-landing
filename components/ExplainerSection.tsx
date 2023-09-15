@@ -112,20 +112,20 @@ export default function ExplainerSection() {
                 title="Deposit"
                 color="bg-[#EBE7D4]"
                 animation={depositAnim}
-                description="Connect your web3 wallet, then deposit your stablecoins and blue chip crypto into Popcorn’s DeFi products."
+                description="Connect your web3 wallet, deposit your stablecoins and blue chip crypto assets into Popcorn’s DeFi products."
               />
               <HeroCards
-                title="Do Well"
+                title="Earn"
                 color="bg-[#121A27]"
                 textColor="text-white"
                 animation={doWellAnim}
-                description="Optimize your returns with non-custodial vault strategies and staking products."
+                description="Your assets automatically earn the most competitive yield using audited, risk-adjusted DeFi strategies."
               />
               <HeroCards
-                title="Do Good"
+                title="Boost"
                 color="bg-[#FFE650]"
                 animation={doGoodAnim}
-                description="Fund community-selected nonprofit and social impact organisations at no additional cost."
+                description="Stake your POP LP for vePOP (vote-escrow) to boost your yield with call options on POP."
               />
             </div>
 
@@ -148,8 +148,8 @@ export default function ExplainerSection() {
         </div>
         <div className="h-[1300px] flex flex-col gap-y-4">
           <HeroCards title="Deposit" color="bg-[#EBE7D4]" icon="/images/blackCircles.svg" description="Connect your web3 wallet, deposit your stablecoins and blue chip crypto assets into Popcorn’s DeFi products." />
-          <HeroCards title="Do Well" color="bg-[#121A27]" textColor="text-white" icon="/images/whiteSmile.svg" description="Optimize your returns with non-custodial vault strategies and staking products." />
-          <HeroCards title="Do Good" color="bg-[#FFE650]" icon="/images/blackSmiles.svg" description="Fund community-selected nonprofit and social impact organisations at no additional cost." />
+          <HeroCards title="Earn" color="bg-[#121A27]" textColor="text-white" icon="/images/whiteSmile.svg" description="Your assets automatically earn the most competitive yield using audited, risk-adjusted DeFi strategies." />
+          <HeroCards title="Boost" color="bg-[#FFE650]" icon="/images/blackSmiles.svg" description="Stake your POP LP for vePOP (vote-escrow) to boost your yield with call options on POP." />
         </div>
       </div>
     </section>
