@@ -98,7 +98,7 @@ export default function ExplainerSection() {
                 Use your vote-escrow POP to vote on which vault strategies you can boost
               </p>
               <Link
-                href="https://app.pop.network/sweet-vaults"
+                href="https://app.pop.network/vaults"
                 passHref
                 className="flex flex-row border-x-0 border-y-customLightGray border-b-2"
               >

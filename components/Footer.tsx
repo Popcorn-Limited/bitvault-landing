@@ -15,10 +15,10 @@ export default function Footer() {
         <div className="space-y-6 md:hidden">
           <div className="flex flex-col space-y-3 text-base">
             <p className="text-base font-medium uppercase">Products</p>
-            <Link href="https://app.pop.network/sweet-vaults" passHref>
+            <Link href="https://app.pop.network/vaults" passHref>
               Sweet Vaults
             </Link>
-            <Link href="https://app.pop.network/staking" passHref>
+            <Link href="https://archive.pop.network/staking" passHref>
               Staking
             </Link>
           </div>
@@ -30,7 +30,7 @@ export default function Footer() {
             {/* <Link href="https://discord.gg/w9zeRTSZsq" passHref>
               Discord
             </Link> */}
-            <Link href="https://github.com/popcorndao" passHref>
+            <Link href="https://github.com/Popcorn-Limited" passHref>
               Github
             </Link>
           </div>
@@ -52,23 +52,23 @@ export default function Footer() {
             {/* <Link href="https://discord.gg/w9zeRTSZsq" passHref>
               <DiscordIcon color={"black"} size={"24"} />
             </Link> */}
-            <Link href="https://github.com/popcorndao" passHref>
+            <Link href="https://github.com/Popcorn-Limited" passHref>
               <GithubIcon color={"black"} size={"24"} />
             </Link>
           </div>
         </div>
         <div className="hidden md:flex flex-col space-y-3 text-base">
           <p className="text-base font-medium uppercase">Products</p>
-          <Link href="https://app.pop.network/sweet-vaults" passHref>
+          <Link href="https://app.pop.network/vaults" passHref>
             Sweet Vaults
           </Link>
-          <Link href="https://app.pop.network/staking" passHref>
+          <Link href="https://archive.pop.network/staking" passHref>
             Staking
           </Link>
         </div>
         <div className="hidden md:flex flex-col space-y-3 text-base">
           <p className="text-base font-medium uppercase">Connect</p>
-          <Link href="https://twitter.com/Popcorn_DAO" passHref>
+          <Link href="https://github.com/Popcorn-Limited" passHref>
             Twitter
           </Link>
           {/* <Link href="https://discord.gg/w9zeRTSZsq" passHref>

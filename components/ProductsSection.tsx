@@ -19,7 +19,7 @@ export default function ProductsSection() {
             number="01"
             title="Smart Vaults"
             description="Automated asset strategies that earn yield on your single asset deposits."
-            url="https://app.pop.network/sweet-vaults"
+            url="https://app.pop.network/vaults"
             image={(color) => <CircleBunny color={color} />}
             animateColor="#C391FF"
             textColorClassname="text-[#C391FF]"
