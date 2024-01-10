@@ -4,6 +4,7 @@ import StatusWithLabel from "./Common/StatusWithLabel";
 import DesktopMenu from "./DesktopMenu";
 import SliderContainer from "./SliderContainer";
 import { useEffect, useState } from "react";
+import SecondaryActionButton from "./Common/SecondaryActionButton";
 
 export default function HeroSection() {
   const router = useRouter();
@@ -25,6 +26,15 @@ export default function HeroSection() {
 
   return (
     <div className="flex-col h-full min-h-[600px] w-screen relative flex 2xl:mx-auto 2xl:max-w-[1800px]">
+      {/* Temporary Banner */}
+      <div className="bg-[#DFFF1C] p-4 md:p-2 mt-2 mx-4 md:mx-8 rounded-lg flex flex-row justify-center">
+        <div className="flex flex-row items-center justify-center">
+          <p className="text-black font-bold md:mr-4">Migrate POP to VCX by January 31, 2024!</p>
+          <div className="w-40">
+            <SecondaryActionButton label="Migrate Now" handleClick={() => router.push("https://app.vaultcraft.io/migration")} />
+          </div>
+        </div>
+      </div>
       <DesktopMenu />
       <div className="flex flex-row justify-end absolute right-0 top-96 smmd:top-24">
         <img alt="" className="smmd:w-[50vw] w-[60vw] smmd:max-w-[700px] smmd:max-h-[80vh] 2xl:hidden" src="/images/icons/greenPopLogoCut.svg" />
