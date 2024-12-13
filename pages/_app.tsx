@@ -16,7 +16,7 @@ type WindowWithDataLayer = Window & {
 
 declare const window: WindowWithDataLayer;
 
-export default function MyApp(props) {
+export default function MyApp(props: any) {
   const { Component, pageProps } = props;
   const getLayout =
     Component.getLayout ||
@@ -29,7 +29,7 @@ export default function MyApp(props) {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
+      jssStyles.parentElement?.removeChild(jssStyles);
     }
   }, []);
 
