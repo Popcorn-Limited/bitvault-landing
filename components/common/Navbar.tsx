@@ -12,8 +12,8 @@ export default function Navbar(): JSX.Element {
   const [menuVisible, toggleMenu] = useState<boolean>(false);
 
   return (
-    <div className="px-8 md:px-24 pt-8">
-      <div className="flex flex-row items-center justify-between w-full z-10 px-8 py-4 rounded-lg bg-customNeutral100 bg-opacity-50 text-white">
+    <div className="px-8 md:px-12 xl:px-24 pt-8">
+      <div className="flex flex-row items-center justify-between w-full z-10 px-4 py-4 rounded-lg bg-customNeutral100 bg-opacity-50 text-white">
         <div className="flex flex-row items-center gap-6">
           <div>
             <Link

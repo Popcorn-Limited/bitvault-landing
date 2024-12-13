@@ -104,7 +104,7 @@ const GovernanceLinks = [
 const Footer = () => {
   return (
     <footer className="bg-black bg-opacity-10">
-      <section className="w-full flex flex-col md:flex-row space-between px-8 md:px-24 py-8">
+      <section className="w-full flex flex-col md:flex-row space-between px-8 md:px-12 xl:px-24 py-8">
         <div className="w-full md:w-1/2 md:mr-8">
           <div className="">
             <span className="flex flex-row items-center gap-2 mb-2">

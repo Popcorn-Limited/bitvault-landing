@@ -20,7 +20,7 @@ export default function HeroSection(): JSX.Element {
   }, [])
 
   return (
-    <div className="flex-col h-full min-h-[600px] px-8 md:px-24 pt-12 pb-40">
+    <div className="flex-col h-full min-h-[600px] px-8 md:px-12 xl:px-24 pt-12 pb-40">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="md:w-2/3 mt-12">
           <h2 className="text-primaryGreen text-8xl md:text-9xl font-handwritten leading-none">v2 era</h2>
@@ -29,7 +29,7 @@ export default function HeroSection(): JSX.Element {
             <MainActionButton label="Earn" handleClick={() => router.push("https://app.vaultcraft.io/vaults")} />
             <SecondaryActionButton label="Build" handleClick={() => router.push("https://docs.vaultcraft.io/products/v2-safe-smart-vaults/developer-docs")} />
           </div>
-          <div className="w-72 md:w-56 bg-customNeutral100 bg-opacity-40 rounded-full border border-primaryGreen p-4 mt-24">
+          <div className="w-72 bg-customNeutral100 bg-opacity-40 rounded-full border border-primaryGreen p-4 mt-24">
             <p className="text-center text-4xl font-bold font-mono tracking-wider">TVL ${tvl}</p>
           </div>
         </div>
