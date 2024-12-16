@@ -30,7 +30,7 @@ export default function Navbar(): JSX.Element {
         </div>
         <div className="flex flex-row items-center space-x-4">
           <Link href="https://docs.vaultcraft.io/" passHref>
-            <p className="font-light text-xl">Docs</p>
+            <p className="font-light text-xl mt-1">Docs</p>
           </Link>
           <div className="w-48 hidden md:block">
             <BuyVCXButton />
