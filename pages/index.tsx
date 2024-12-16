@@ -31,7 +31,7 @@ const IndexPage = () => {
       <div
         className="absolute left-0 right-0 min-h-screen w-full flex flex-col justify-between bg-cover bg-center bg-no-repeat text-white font-kh-teka"
         style={{
-          backgroundImage: "url('/images/background.svg')", // Replace with your image path
+          backgroundImage: "url('/images/background.png')", // Replace with your image path
         }}
       >
         <Navbar />
