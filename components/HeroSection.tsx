@@ -13,10 +13,14 @@ export default function HeroSection(): JSX.Element {
   });
 
   useEffect(() => {
-    fetch("https://api.llama.fi/protocol/vaultcraft").then(
-      res => res.json().then(
-        res => setTvl(formatter.format(res.currentChainTvls.Ethereum + res.currentChainTvls.staking))
+    async function getTVL() {
+      const res = await fetch("https://api.llama.fi/protocol/vaultcraft")
+      const data = await res.json()
+      setTvl(formatter.format(
+        Object.values(data.currentChainTvls).reduce((acc: number, curr: any) => acc + curr, 0) - data.currentChainTvls.staking // staking gets counted twice so we subtract it once
       ))
+    }
+    getTVL()
   }, [])
 
   return (
