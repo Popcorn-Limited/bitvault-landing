@@ -1,0 +1,27 @@
+import React from "react";
+import { ButtonProps } from "./MainActionButton";
+
+export default function SecondaryActionButton({
+  label,
+  icon,
+  handleClick,
+  hidden,
+  disabled = false,
+}: ButtonProps): JSX.Element {
+  return (
+    <button
+      className={`w-full px-2 py-2.5 rounded bg-primaryGreen border border-primaryGreen font-semibold text-base text-black
+                  transition-all ease-in-out duration-500 hover:bg-white hover:border-white hover:text-black
+                  disabled:bg-customGray100 disabled:border-customGray100 disabled:text-white disabled:cursor-not-allowed 
+                  disabled:hover:border-customGray100 disabled:hover:bg-customGray100 disabled:hover:text-white
+      ${hidden ? "hidden" : ""}`}
+      onClick={handleClick}
+      disabled={disabled}
+    >
+      <span className="flex flex-wrap items-center justify-center gap-2">
+        <span className="font-bold text-lg">{label}</span>
+        {icon && <img src={icon} alt={label} className="w-5 h-5" />}
+      </span>
+    </button>
+  );
+}
