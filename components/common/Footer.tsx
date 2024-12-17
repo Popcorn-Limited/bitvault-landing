@@ -162,7 +162,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-1/5">
+          <div className="w-1/2 md:w-1/5 mt-8 md:mt-0">
             <p className="text-white font-bold leading-6 tracking-1">
               Products
             </p>
@@ -180,7 +180,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-1/5">
+          <div className="w-1/2 md:w-1/5 mt-8 md:mt-0">
             <p className="text-white font-bold leading-6 tracking-1">
               Governance
             </p>
@@ -199,7 +199,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-1/5">
+          <div className="w-1/2 md:w-1/5 mt-8 md:mt-0">
             <p className="text-white font-bold leading-6 tracking-1">
               Bug Bounty
             </p>
