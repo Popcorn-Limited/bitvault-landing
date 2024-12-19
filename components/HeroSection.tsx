@@ -3,14 +3,15 @@ import { useRouter } from "next/router";
 import MainActionButton from "./common/MainActionButton";
 import SecondaryActionButton from "./common/SecondaryActionButton";
 
+
+const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
+  //@ts-ignore
+  notation: "compact",
+});
+
 export default function HeroSection(): JSX.Element {
   const router = useRouter();
-  const [tvl, setTvl] = useState<string>("0");
-
-  const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
-    //@ts-ignore
-    notation: "compact",
-  });
+  const [tvl, setTvl] = useState<string>(formatter.format(100_000_000));
 
   useEffect(() => {
     async function getTVL() {
