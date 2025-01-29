@@ -52,15 +52,15 @@ const AuditLinks = [
 const ProductLinks = [
   {
     label: "Smart Vaults",
-    href: "/vaults",
+    href: "https://app.vaultcraft.io/vaults",
   },
   {
     label: "Boost Vaults",
-    href: "/boost",
+    href: "https://app.vaultcraft.io/boost",
   },
   {
     label: "Manage",
-    href: "/manage",
+    href: "https://app.vaultcraft.io/manage",
   },
 ];
 
