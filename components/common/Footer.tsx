@@ -40,7 +40,7 @@ const AuditLinks = [
     href: "https://code4rena.com/",
   },
   {
-    label: "Palading",
+    label: "Paladin",
     href: "https://paladinsec.co/",
   },
   {
