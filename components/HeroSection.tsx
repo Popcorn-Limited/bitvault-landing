@@ -20,17 +20,17 @@ export default function HeroSection(): JSX.Element {
         <div className="space-y-8 mt-4">
           <div>
             <h3 className="text-primaryGold text-xl leading-none text-end">TVL</h3>
-            <h4 className="text-white text-4xl font-bold leading-none text-end">{tvl}</h4>
+            <h4 className="text-white text-3xl font-bold leading-none text-end">{tvl}</h4>
           </div>
           <div>
             <h3 className="text-primaryGold text-xl leading-none text-end">APY</h3>
-            <h4 className="text-white text-4xl font-bold leading-none text-end">{apy}%</h4>
+            <h4 className="text-white text-3xl font-bold leading-none text-end">{apy}%</h4>
           </div>
         </div>
 
         <div className="mt-8">
-          <h1 className="text-white text-8xl md:text-9xl font-medium leading-none text-center">Institutional, <br /> Bitcoin-Backed USD</h1>
-          <h2 className="text-gray-400 text-4xl leading-none text-center">A stablecoin earning secure, risk adjusted yield</h2>
+          <h1 className="text-white text-7xl md:text-8xl font-medium leading-none text-center">Institutional, <br /> Bitcoin-Backed USD</h1>
+          <h2 className="text-gray-400 text-3xl leading-none text-center mt-4">A stablecoin earning secure, risk adjusted yield</h2>
           <div className="mx-auto w-60 mt-8">
             <MainActionButton label="Read more" handleClick={() => router.push("https://docs.bitvault.finance/")} />
           </div>

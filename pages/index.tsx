@@ -30,7 +30,7 @@ const IndexPage = () => {
       <div
         className="min-h-screen w-full"
         style={{
-          background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/background.png') no-repeat center center/cover",
+          background: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/background.png') no-repeat center center/cover",
         }}
       >
         <Navbar />

@@ -14,7 +14,7 @@ export default function Navbar(): JSX.Element {
             alt="Logo"
             className="w-12 h-12 md:w-10 md:h-10 text-white"
           />
-          <h2 className="text-3xl font-bold leading-none mt-1">
+          <h2 className="text-3xl font-bold leading-none">
             BitVault
           </h2>
         </Link>
@@ -22,7 +22,7 @@ export default function Navbar(): JSX.Element {
           href={`https://docs.bitvault.finance/`}
           passHref
         >
-          <h2 className="text-xl leading-none mt-1 hover:text-secondaryGold">
+          <h2 className="text-xl leading-none hover:text-secondaryGold">
             Docs
           </h2>
         </Link>
