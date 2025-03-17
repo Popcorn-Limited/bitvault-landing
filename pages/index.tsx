@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import Navbar from "@/components/common/Navbar";
-import Footer from "@/components/common/Footer";
 import HeroSection from "@/components/HeroSection";
 import localFont from 'next/font/local'
 import { Herr_Von_Muellerhoff } from 'next/font/google'
@@ -11,7 +10,7 @@ const khTeka = localFont({
   variable: '--font-kh-teka'
 })
 
-const handwritten = Herr_Von_Muellerhoff({ 
+const handwritten = Herr_Von_Muellerhoff({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-herr-von-muller'
@@ -27,17 +26,16 @@ const IndexPage = () => {
   }, [router.pathname]);
 
   return (
-    <div className={`${khTeka.variable} ${handwritten.variable} font-sans`}>
+    <div className={`${khTeka.variable} font-sans bg-background`}>
       <div
-        className="absolute left-0 right-0 min-h-screen w-full flex flex-col justify-between bg-black bg-cover bg-center bg-no-repeat text-white font-kh-teka"
+        className="min-h-screen w-full"
         style={{
-          backgroundImage: "url('/images/background.png')", // Replace with your image path
+          background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/background.png') no-repeat center center/cover",
         }}
       >
         <Navbar />
         <HeroSection />
-        <Footer />
-      </div >
+      </div>
     </div>
   );
 };

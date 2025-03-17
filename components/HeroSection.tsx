@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import MainActionButton from "./common/MainActionButton";
-import SecondaryActionButton from "./common/SecondaryActionButton";
 
 
 const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
@@ -11,36 +10,34 @@ const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
 
 export default function HeroSection(): JSX.Element {
   const router = useRouter();
-  const [tvl, setTvl] = useState<string>(formatter.format(100_000_000));
-
-  useEffect(() => {
-    async function getTVL() {
-      const res = await fetch("https://api.llama.fi/protocol/vaultcraft")
-      const data = await res.json()
-      setTvl(formatter.format(
-        Object.values(data.currentChainTvls).reduce((acc: number, curr: any) => acc + curr, 0) - data.currentChainTvls.staking // staking gets counted twice so we subtract it once
-      ))
-    }
-    getTVL()
-  }, [])
+  const [tvl, setTvl] = useState<string>(formatter.format(200_000_000));
+  const [apy, setApy] = useState<number>(10);
 
   return (
-    <div className="flex-col h-full min-h-[600px] px-8 md:px-12 xl:px-24 pt-12 pb-40">
-      <div className="flex flex-col md:flex-row justify-between items-center">
-        <div className="md:w-2/3 mt-12">
-          <h2 className="text-primaryGreen text-8xl md:text-9xl font-handwritten leading-none">v2 era</h2>
-          <h1 className="text-white text-8xl md:text-9xl font-medium leading-none">Institutional grade, <br /> tokenized yield with perpetual options</h1>
-          <div className="flex flex-row gap-4 w-60 mt-8">
-            <MainActionButton label="Earn" handleClick={() => router.push("https://app.vaultcraft.io/vaults")} />
-            <SecondaryActionButton label="Build" handleClick={() => router.push("https://docs.vaultcraft.io/products/v2-safe-smart-vaults/developer-docs")} />
+    <div className="flex-col h-full px-8 md:px-12 xl:px-24 z-10 py-4">
+      <div className="flex flex-col justify-between">
+
+        <div className="space-y-8 mt-4">
+          <div>
+            <h3 className="text-primaryGold text-xl leading-none text-end">TVL</h3>
+            <h4 className="text-white text-4xl font-bold leading-none text-end">{tvl}</h4>
           </div>
-          <div className="w-72 bg-customNeutral100 bg-opacity-40 rounded-full border border-primaryGreen p-4 mt-24">
-            <p className="text-center text-4xl font-bold font-mono tracking-wider">TVL ${tvl}</p>
+          <div>
+            <h3 className="text-primaryGold text-xl leading-none text-end">APY</h3>
+            <h4 className="text-white text-4xl font-bold leading-none text-end">{apy}%</h4>
           </div>
         </div>
-        <div className="md:w-1/3 flex justify-center">
-          <img src="/images/heroImage.svg" alt="hero-image" className="h-[80%]" />
+
+        <div className="mt-8">
+          <h1 className="text-white text-8xl md:text-9xl font-medium leading-none text-center">Institutional, <br /> Bitcoin-Backed USD</h1>
+          <h2 className="text-gray-400 text-4xl leading-none text-center">A stablecoin earning secure, risk adjusted yield</h2>
+          <div className="mx-auto w-60 mt-8">
+            <MainActionButton label="Read more" handleClick={() => router.push("https://docs.bitvault.finance/")} />
+          </div>
         </div>
+      </div>
+
+      <div>
       </div>
     </div>
   );

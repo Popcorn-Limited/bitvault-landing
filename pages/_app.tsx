@@ -1,12 +1,11 @@
 import Head from "next/head";
-import Router from "next/router";
 import React, { useEffect, useState } from "react";
 import "../styles/globals.css";
 
 
 const { title, description, socialShareImage } = {
-  title: "VaultCraft",
-  description: "VaultCraft is a DeFi yield-optimizing protocol with customizable asset strategies that instantly zap your crypto from any chain into the highest yield-generating products across DeFi in 1 click.",
+  title: "BitVault",
+  description: "A stablecoin earning secure, risk-adjusted yield",
   socialShareImage: "https://www.popcorn.network/images/social_cover_image.png",
 };
 
@@ -41,7 +40,7 @@ export default function MyApp(props: any) {
         <meta name="description" content={description} />
 
         {/*  Facebook Meta Tags */}
-        <meta property="og:url" content="https://vaultcraft.io/" />
+        <meta property="og:url" content="https://bitvault.finance/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
@@ -49,12 +48,12 @@ export default function MyApp(props: any) {
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="vaultcraft.io" />
-        <meta property="twitter:url" content="https://vaultcraft.io/" />
+        <meta property="twitter:domain" content="bitvault.finance" />
+        <meta property="twitter:url" content="https://bitvault.finance/" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={socialShareImage} />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
       {getLayout(<Component {...pageProps} />)}

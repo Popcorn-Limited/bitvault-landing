@@ -111,6 +111,11 @@ module.exports = {
         secondaryFuchsia: "#F289E6",
         secondaryPurple: "#9B55FF",
         secondaryViolet: "#C391FF",
+
+        primaryGold: "#E49D2F",
+        secondaryGold: "#F6AE3F",
+
+        background: "#180e02",
       },
       fontSize: {
         zero: "0rem",
