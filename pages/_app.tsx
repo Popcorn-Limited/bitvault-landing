@@ -6,7 +6,7 @@ import "../styles/globals.css";
 const { title, description, socialShareImage } = {
   title: "BitVault",
   description: "A stablecoin earning secure, risk-adjusted yield",
-  socialShareImage: "https://www.popcorn.network/images/social_cover_image.png",
+  socialShareImage: "/images/socialShare.png",
 };
 
 type WindowWithDataLayer = Window & {
