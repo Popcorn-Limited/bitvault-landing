@@ -4,6 +4,7 @@ import Navbar from "@/components/common/Navbar";
 import HeroSection from "@/components/HeroSection";
 import localFont from 'next/font/local'
 import { Herr_Von_Muellerhoff } from 'next/font/google'
+import InvestorSection from "@/components/InvestorSection";
 
 const khTeka = localFont({
   src: '../public/KH_Teka/KHTeka-Regular.woff',
@@ -28,13 +29,14 @@ const IndexPage = () => {
   return (
     <div className={`${khTeka.variable} font-sans bg-background`}>
       <div
-        className="min-h-screen w-full"
+        className="min-h-screen w-full flex flex-col"
         style={{
           background: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/background.png') no-repeat center center/cover",
         }}
       >
         <Navbar />
         <HeroSection />
+        <InvestorSection />
       </div>
     </div>
   );

@@ -32,7 +32,7 @@ export default function HeroSection(): JSX.Element {
           <h1 className="text-white text-7xl md:text-8xl font-medium leading-none text-center">Institutional, <br /> Bitcoin-Backed USD</h1>
           <h2 className="text-gray-400 text-3xl leading-none text-center mt-4">A stablecoin earning secure, risk adjusted yield</h2>
           <div className="mx-auto w-60 mt-8">
-            <MainActionButton label="Read more" handleClick={() => router.push("https://docs.bitvault.finance/")} />
+            <MainActionButton label="Launch App" handleClick={() => router.push("https://app.bitvault.finance/")} />
           </div>
         </div>
       </div>
