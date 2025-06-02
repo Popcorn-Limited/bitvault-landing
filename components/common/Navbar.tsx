@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Navbar(): JSX.Element {
   return (
     <div className="">
-      <div className="flex flex-row items-center justify-between w-full z-10 px-8 md:px-12 xl:px-24 py-4 bg-black border-b border-white/10 text-white">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full z-10 px-8 md:px-12 xl:px-24 py-4 bg-black border-b border-white/10 text-white">
 
         <Link
           href={`/`}

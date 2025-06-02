@@ -14,7 +14,7 @@ export default function HeroSection(): JSX.Element {
   const [apy, setApy] = useState<number>(10);
 
   return (
-    <div className="flex-col h-full px-8 md:px-12 xl:px-24 z-10 mb-24">
+    <div className="flex-col h-full px-2 md:px-12 xl:px-24 z-10 mb-24">
       <div className="flex flex-col justify-between">
 
         <div className="space-y-8 mt-4">
