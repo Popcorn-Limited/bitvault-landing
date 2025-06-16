@@ -1,7 +1,16 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import Link from "next/link";
+import { useState } from "react";
+
+const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
+  //@ts-ignore
+  notation: "compact",
+});
 
 export default function Navbar(): JSX.Element {
+  const [tvl, setTvl] = useState<string>(formatter.format(200_000_000));
+  const [apy, setApy] = useState<number>(10);
+
   return (
     <div className="">
       <div className="flex flex-col md:flex-row items-center justify-between w-full z-10 px-8 md:px-12 xl:px-24 py-4 bg-black border-b border-white/10 text-white">
@@ -61,6 +70,18 @@ export default function Navbar(): JSX.Element {
         </div>
 
         <div className="w-40"></div>
+
+      </div>
+
+      <div className="hidden sm:block space-y-8 mt-4 px-2 sm:px-12 xl:px-24">
+        <div>
+          <h3 className="text-primaryGold text-xl leading-none text-end">APY</h3>
+          <h4 className="text-white text-3xl font-bold leading-none text-end">{apy}%</h4>
+        </div>
+        {/* <div>
+            <h3 className="text-primaryGold text-xl leading-none text-end">TVL</h3>
+            <h4 className="text-white text-3xl font-bold leading-none text-end">{tvl}</h4>
+          </div> */}
 
       </div>
     </div>
