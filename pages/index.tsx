@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import localFont from 'next/font/local'
 import { Herr_Von_Muellerhoff } from 'next/font/google'
 import InvestorSection from "@/components/InvestorSection";
+import CardsSection from "@/components/CardsSection";
 
 const khTeka = localFont({
   src: '../public/KH_Teka/KHTeka-Regular.woff',
@@ -38,6 +39,7 @@ const IndexPage = () => {
         <Navbar />
         <HeroSection />
         <InvestorSection />
+        <CardsSection />
       </div>
     </div>
   );
