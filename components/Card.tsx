@@ -162,7 +162,7 @@ export function Card({
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  marginTop: 10,
+                  marginTop: 6,
                   fontSize: 18,
                   color: textColor,
                 }}
