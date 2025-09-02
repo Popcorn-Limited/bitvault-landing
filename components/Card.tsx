@@ -52,7 +52,7 @@ export function Card({
           style={{
             width: "100%",
             borderRadius: 5,
-            height: 128,
+            height: 170,
             backgroundImage: `url(${imageUrl})`,
             backgroundSize: "cover",
             backgroundPosition: "center",

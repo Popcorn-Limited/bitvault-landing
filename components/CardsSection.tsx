@@ -3,6 +3,8 @@ import tokenbvUSD from "../public/images/bvusd.svg";
 import tokensbvUSD from "../public/images/sbvusd.svg";
 import { Card } from "./Card";
 import { BorrowModal } from "./BorrowModal";
+import bvusdBackground from "../public/images/bvusdBackground.jpg";
+import sbvusdBackground from "../public/images/sbvusdBackground.jpg";
 
 const imageUrl =
   "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1200&auto=format&fit=crop";
@@ -28,7 +30,7 @@ export default function CardsSection() {
     <section
       style={{
         width: "100%",
-        maxWidth: "1000px",
+        maxWidth: "1200px",
         margin: "0 auto",
         marginTop: "100px",
       }}
@@ -55,7 +57,7 @@ export default function CardsSection() {
           tokenImage={tokensbvUSD}
           backgroundColor="#1A1F2B"
           textColor="white"
-          imageUrl={imageUrl}
+          imageUrl={"/images/bvUSDBackground.jpg"}
           badgeText="sbvUSD"
           apy="12%"
           headline="Institutional-Grade Yield"
@@ -71,7 +73,7 @@ export default function CardsSection() {
           tokenImage={tokenbvUSD}
           backgroundColor="#F9FAFB"
           textColor="black"
-          imageUrl={imageUrl}
+          imageUrl={"/images/sbvUSDBackground.jpg"}
           badgeText="bvUSD"
           headline="Institutional Borrowing"
           bullets={bvUSDBullets}
