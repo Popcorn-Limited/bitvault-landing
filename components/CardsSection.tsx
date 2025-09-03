@@ -3,11 +3,6 @@ import tokenbvUSD from "../public/images/bvusd.svg";
 import tokensbvUSD from "../public/images/sbvusd.svg";
 import { Card } from "./Card";
 import { BorrowModal } from "./BorrowModal";
-import bvusdBackground from "../public/images/bvusdBackground.jpg";
-import sbvusdBackground from "../public/images/sbvusdBackground.jpg";
-
-const imageUrl =
-  "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1200&auto=format&fit=crop";
 
 const sbvUSDBullets = [
   "Allocated to market-neutral & private credit",
