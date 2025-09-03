@@ -27,19 +27,20 @@ export default function CardsSection() {
         width: "100%",
         maxWidth: "1200px",
         margin: "0 auto",
-        marginTop: "100px",
+        marginTop: "300px",
       }}
     >
       {/* Title */}
-      <h1 className="text-white text-6xl md:text-7xl font-medium leading-none text-center">
+      <h1 className="text-white text-5xl md:text-5xl font-medium leading-none text-center">
         Welcome to BitVault{" "}
       </h1>
       <h2
         style={{
-          fontSize: 25,
+          fontSize: 23,
           fontWeight: 300,
           color: "#a2a2a2ff",
           textAlign: "center",
+          marginTop: 10
         }}
       >
         Unlock capital efficiency with Bitcoin-backed borrowing or
@@ -47,14 +48,7 @@ export default function CardsSection() {
       </h2>
 
       {/* Cards Container */}
-      <div
-        style={{
-          padding: "30px",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "24px",
-        }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8">
         <Card
           tokenImage={tokensbvUSD}
           backgroundColor="#1A1F2B"
@@ -67,7 +61,7 @@ export default function CardsSection() {
           bullets={sbvUSDBullets}
           ctaText="Earn Now"
           onCta={() =>
-            window.open("https://app.bitvault.finance/buy", "_blank")
+            window.open("https://app.bitvault.finance/earn", "_blank")
           }
         />
 
