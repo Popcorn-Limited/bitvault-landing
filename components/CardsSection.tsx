@@ -18,7 +18,7 @@ const sbvUSDBullets = [
 ];
 
 const bvUSDBullets = [
-  "Earn REAL YIELD on Bitcoin",
+  "Earn REAL YIELD on your Bitcoin by",
   "Overcollateralized Borrowing",
   "KYB required, minimum 1 BTC",
 ];
@@ -36,10 +36,17 @@ export default function CardsSection() {
       }}
     >
       {/* Title */}
-      <h1 className="text-white text-7xl md:text-7xl font-medium leading-none text-center">
+      <h1 className="text-white text-6xl md:text-7xl font-medium leading-none text-center">
         Welcome to BitVault{" "}
       </h1>
-      <h2 className="text-white text-2xl leading-none text-center mt-4">
+      <h2
+        style={{
+          fontSize: 25,
+          fontWeight: 300,
+          color: "#a2a2a2ff",
+          textAlign: "center",
+        }}
+      >
         Unlock capital efficiency with Bitcoin-backed borrowing or
         institutional-yield strategies
       </h2>

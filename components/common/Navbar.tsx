@@ -9,7 +9,7 @@ const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
 
 export default function Navbar(): JSX.Element {
   const [tvl, setTvl] = useState<string>(formatter.format(200_000_000));
-  const [apy, setApy] = useState<number>(10);
+  const [apy, setApy] = useState<number>(12);
 
   return (
     <div className="">

@@ -65,7 +65,7 @@ export function Card({
             display: "flex",
             alignItems: "center",
             gap: 8,
-            margin: "16px 0 10px",
+            margin: "20px 0 16px",
           }}
         >
           <Image
@@ -93,7 +93,7 @@ export function Card({
             >
               {apy}
             </div>
-            <div style={{ fontSize: 15, color: "white", fontWeight: 600 }}>
+            <div style={{ fontSize: 18, color: "white", fontWeight: 600 }}>
               APY
             </div>
           </div>
@@ -101,17 +101,16 @@ export function Card({
 
         {!apy && <div style={{ marginTop: 100 }} />}
         {/* Headline + subhead */}
-        <div style={{ marginTop: 30, marginBottom: 6 }}>
+        <div style={{ marginTop: 30 }}>
           <div style={{ fontSize: 30, fontWeight: 400, color: textColor }}>
             {headline}
           </div>
           {subhead && (
             <div
               style={{
-                fontSize: 20,
+                fontSize: 25,
                 fontWeight: 300,
-                color: "light-gray",
-                marginTop: 2,
+                color: "gray",
               }}
             >
               {subhead}
@@ -120,7 +119,7 @@ export function Card({
           {!subhead && (
             <div
               style={{
-                marginTop: 60,
+                marginTop: 73,
               }}
             />
           )}
