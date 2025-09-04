@@ -24,23 +24,35 @@ export default function CardsSection() {
   return (
     <section
       style={{
-        width: "100%",
+        width: "63%",
         maxWidth: "1200px",
+        marginTop: "100px",
         margin: "0 auto",
-        marginTop: "300px",
+        display: "grid",
+        gridTemplateRows: "auto auto 1fr",
+        justifyItems: "center",
+        textAlign: "center",
+        height: "100%",
+        boxSizing: "border-box",
       }}
     >
-      {/* Title */}
-      <h1 className="text-white text-5xl md:text-5xl font-medium leading-none text-center">
-        Welcome to BitVault{" "}
+      <h1
+        style={{
+          color: "white",
+          fontSize: "2.5rem",
+          fontWeight: 400,
+          lineHeight: 1,
+          textAlign: "center",
+        }}
+      >
+        Welcome to BitVault
       </h1>
       <h2
         style={{
-          fontSize: 23,
+          fontSize: 18,
           fontWeight: 300,
           color: "#a2a2a2ff",
           textAlign: "center",
-          marginTop: 10
         }}
       >
         Unlock capital efficiency with Bitcoin-backed borrowing or
@@ -48,10 +60,21 @@ export default function CardsSection() {
       </h2>
 
       {/* Cards Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8">
+      <div
+        style={{
+          width: "100%",
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: 24,
+          padding: 16,
+          boxSizing: "border-box",
+          height: "100%",
+          minHeight: 0,
+        }}
+      >
         <Card
           tokenImage={tokensbvUSD}
-          backgroundColor="#1A1F2B"
+          backgroundColor="#23262F"
           textColor="white"
           imageUrl={"/images/sbvUSDBackground.jpg"}
           badgeText="sbvUSD"
@@ -67,8 +90,8 @@ export default function CardsSection() {
 
         <Card
           tokenImage={tokenbvUSD}
-          backgroundColor="#F9FAFB"
-          textColor="black"
+          backgroundColor="#353945"
+          textColor="white"
           imageUrl={"/images/bvUSDBackground.jpg"}
           badgeText="bvUSD"
           headline="Institutional Borrowing"
