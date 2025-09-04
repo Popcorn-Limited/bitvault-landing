@@ -26,7 +26,7 @@ export default function CardsSection() {
       style={{
         width: "63%",
         maxWidth: "1200px",
-        marginTop: "100px",
+        marginTop: "150px",
         margin: "0 auto",
         display: "grid",
         gridTemplateRows: "auto auto 1fr",
