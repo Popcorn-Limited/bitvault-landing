@@ -29,18 +29,21 @@ const IndexPage = () => {
 
   return (
     <div className={`${khTeka.variable} font-sans bg-background`}>
-      <div
-        className="min-h-screen w-full flex flex-col  justify-between"
+      <section
+        className="min-h-screen w-full flex flex-col"
         style={{
           background:
-            "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/background.png') no-repeat center center/cover",
+            "linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('/images/background.png') no-repeat center/cover",
         }}
       >
         <Navbar />
         <HeroSection />
         <InvestorSection />
+      </section>
+
+      <section className="min-h-screen w-full">
         <CardsSection />
-      </div>
+      </section>
     </div>
   );
 };
