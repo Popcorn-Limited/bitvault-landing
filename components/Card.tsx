@@ -154,6 +154,7 @@ export function Card(props: Props) {
         {/* Divider */}
         <div
           style={{
+            flex: "0 0 2px",
             height: 2,
             background: "linear-gradient(90deg,gray,transparent)",
             marginTop: "auto",
