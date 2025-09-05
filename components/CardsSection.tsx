@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import tokenbvUSD from "../public/images/bvusd.svg";
 import tokensbvUSD from "../public/images/sbvusd.svg";
 import { Card } from "./Card";
@@ -18,6 +18,34 @@ const bvUSDBullets = [
   "KYB required, minimum 1 BTC",
 ];
 
+function useSharedHeights() {
+  const [vars, setVars] = useState({
+    ["--intro-h" as any]: "300px",
+    ["--apy-h" as any]: "36px",
+  });
+
+  useLayoutEffect(() => {
+    const calc = () => {
+      const intro = Math.max(280, Math.min(window.innerHeight * 0.34, 380));
+      const apy = Math.max(28, Math.min(window.innerHeight * 0.05, 44));
+      setVars({
+        ["--intro-h" as any]: `${Math.round(intro)}px`,
+        ["--apy-h" as any]: `${Math.round(apy)}px`,
+      });
+    };
+    calc();
+    window.addEventListener("resize", calc);
+    return () => window.removeEventListener("resize", calc);
+  }, []);
+
+  return vars as React.CSSProperties;
+}
+
+export function CardsRow({ children }: { children: React.ReactNode }) {
+  const cssVars = useSharedHeights();
+  return <div style={cssVars}>{children}</div>;
+}
+
 export default function CardsSection() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,7 +54,6 @@ export default function CardsSection() {
       style={{
         width: "63%",
         maxWidth: "1200px",
-        marginTop: "100px",
         marginLeft: "auto",
         marginRight: "auto",
         display: "grid",
@@ -61,47 +88,50 @@ export default function CardsSection() {
       </h2>
 
       {/* Cards Container */}
-      <div
-        style={{
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: 24,
-          padding: 16,
-          boxSizing: "border-box",
-          height: "100%",
-          minHeight: 0,
-        }}
-      >
-        <Card
-          tokenImage={tokensbvUSD}
-          backgroundColor="#23262F"
-          textColor="white"
-          imageUrl={"/images/sbvUSDBackground.jpg"}
-          badgeText="sbvUSD"
-          apy="12%"
-          headline="Institutional-Grade Yield"
-          subhead="Open to All"
-          bullets={sbvUSDBullets}
-          ctaText="Earn Now"
-          onCta={() =>
-            window.open("https://app.bitvault.finance/vault", "_blank")
-          }
-        />
+      <CardsRow>
+        <div
+          style={{
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: 24,
+            padding: 16,
+            boxSizing: "border-box",
+            height: "100%",
+            minHeight: 0,
+          }}
+        >
+          <Card
+            tokenImage={tokensbvUSD}
+            backgroundColor="#23262F"
+            textColor="white"
+            imageUrl={"/images/sbvUSDBackground.jpg"}
+            badgeText="sbvUSD"
+            apy="12%"
+            headline="Institutional-Grade Yield"
+            subhead="Open to All"
+            bullets={sbvUSDBullets}
+            ctaText="Earn Now"
+            onCta={() =>
+              window.open("https://app.bitvault.finance/vault", "_blank")
+            }
+          />
 
-        <Card
-          tokenImage={tokenbvUSD}
-          backgroundColor="#353945"
-          textColor="white"
-          imageUrl={"/images/bvUSDBackground.jpg"}
-          badgeText="bvUSD"
-          headline="Institutional Borrowing"
-          bullets={bvUSDBullets}
-          ctaText="Borrow Now"
-          onCta={() => setIsOpen(true)}
-        />
-        {isOpen && <BorrowModal onClose={() => setIsOpen(false)} />}
-      </div>
+          <Card
+            tokenImage={tokenbvUSD}
+            backgroundColor="#353945"
+            textColor="white"
+            imageUrl={"/images/bvUSDBackground.jpg"}
+            badgeText="bvUSD"
+            headline="Institutional Borrowing"
+            bullets={bvUSDBullets}
+            ctaText="Borrow Now"
+            onCta={() => setIsOpen(true)}
+          />
+        </div>
+      </CardsRow>
+
+      {isOpen && <BorrowModal onClose={() => setIsOpen(false)} />}
     </section>
   );
 }

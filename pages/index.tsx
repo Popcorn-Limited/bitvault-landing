@@ -2,21 +2,21 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import Navbar from "@/components/common/Navbar";
 import HeroSection from "@/components/HeroSection";
-import localFont from 'next/font/local'
-import { Herr_Von_Muellerhoff } from 'next/font/google'
+import localFont from "next/font/local";
+import { Herr_Von_Muellerhoff } from "next/font/google";
 import InvestorSection from "@/components/InvestorSection";
 import CardsSection from "@/components/CardsSection";
 
 const khTeka = localFont({
-  src: '../public/KH_Teka/KHTeka-Regular.woff',
-  variable: '--font-kh-teka'
-})
+  src: "../public/KH_Teka/KHTeka-Regular.woff",
+  variable: "--font-kh-teka",
+});
 
 const handwritten = Herr_Von_Muellerhoff({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-herr-von-muller'
-})
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-herr-von-muller",
+});
 
 const IndexPage = () => {
   const router = useRouter();
@@ -29,7 +29,7 @@ const IndexPage = () => {
 
   return (
     <div className={`${khTeka.variable} font-sans bg-background`}>
-      <section
+      <div
         className="min-h-screen w-full flex flex-col"
         style={{
           background:
@@ -39,11 +39,17 @@ const IndexPage = () => {
         <Navbar />
         <HeroSection />
         <InvestorSection />
-      </section>
+      </div>
 
-      <section className="min-h-screen w-full">
+      <div
+        className="min-h-screen w-full"
+        style={{
+          background:
+            "linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('/images/background.png') no-repeat center/cover",
+        }}
+      >
         <CardsSection />
-      </section>
+      </div>
     </div>
   );
 };
