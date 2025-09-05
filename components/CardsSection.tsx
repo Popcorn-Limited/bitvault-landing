@@ -20,7 +20,7 @@ const bvUSDBullets = [
 
 function useSharedHeights() {
   const [vars, setVars] = useState({
-    ["--intro-h" as any]: "300px",
+    ["--intro-h" as any]: "340px",
     ["--apy-h" as any]: "36px",
   });
 
