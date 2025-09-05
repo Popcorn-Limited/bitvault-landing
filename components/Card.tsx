@@ -170,7 +170,7 @@ export function Card(props: Props) {
         style={{
           listStyle: "none",
           padding: 0,
-          marginTop: 30,
+          marginTop: 15,
           display: "flex",
           flexDirection: "column",
           gap: "clamp(6px, 1.2vh, 10px)",
