@@ -67,7 +67,7 @@ export default function CardsSection() {
       <h1
         style={{
           color: "white",
-          fontSize: "2.5rem",
+          fontSize: "3rem",
           fontWeight: 400,
           lineHeight: 1,
           textAlign: "center",
@@ -77,10 +77,11 @@ export default function CardsSection() {
       </h1>
       <h2
         style={{
-          fontSize: 18,
-          fontWeight: 300,
+          fontSize: 25,
+          fontWeight: 400,
           color: "#a2a2a2ff",
           textAlign: "center",
+          marginTop: 20,
         }}
       >
         Unlock capital efficiency with Bitcoin-backed borrowing or
@@ -91,6 +92,7 @@ export default function CardsSection() {
       <CardsRow>
         <div
           style={{
+            marginTop: 40,
             width: "100%",
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
@@ -103,8 +105,8 @@ export default function CardsSection() {
         >
           <Card
             tokenImage={tokensbvUSD}
-            backgroundColor="#23262F"
-            textColor="white"
+            backgroundColor="#F6AE3F"
+            textColor="black"
             imageUrl={"/images/sbvUSDBackground.jpg"}
             badgeText="sbvUSD"
             apy="12%"
@@ -119,7 +121,7 @@ export default function CardsSection() {
 
           <Card
             tokenImage={tokenbvUSD}
-            backgroundColor="#353945"
+            backgroundColor="#23262F"
             textColor="white"
             imageUrl={"/images/bvUSDBackground.jpg"}
             badgeText="bvUSD"

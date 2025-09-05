@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MainActionButton from "./common/MainActionButton";
+import SecondaryActionButton from "./common/SecondaryActionButton";
 
 type Props = {
   tokenImage: string;
@@ -29,6 +30,7 @@ export function Card(props: Props) {
     ctaText,
     onCta,
   } = props;
+
 
   // constants for alignment
   const INTRO_HEIGHT = "var(--intro-h)";
@@ -80,8 +82,8 @@ export function Card(props: Props) {
             src={tokenImage}
             alt={badgeText}
             style={{
-              width: "20px",
-              height: "20px",
+              width: "30px",
+              height: "30px",
               borderRadius: "50%",
               objectFit: "cover",
             }}
@@ -103,6 +105,7 @@ export function Card(props: Props) {
             display: "flex",
             alignItems: "baseline",
             gap: 8,
+            marginBottom: 30
           }}
         >
           {apy ? (
@@ -143,7 +146,7 @@ export function Card(props: Props) {
               style={{
                 fontSize: "clamp(14px, 2.2vh, 20px)",
                 fontWeight: 300,
-                color: "gray",
+                color: "black",
               }}
             >
               {subhead}
@@ -206,7 +209,9 @@ export function Card(props: Props) {
 
       {/* Button */}
       <div style={{ marginTop: "auto", paddingTop: 80 }}>
-        <MainActionButton label={ctaText} handleClick={onCta} />
+        {backgroundColor == "#F6AE3F" &&  (<SecondaryActionButton label={ctaText} handleClick={onCta} />)}
+        {backgroundColor !== "#F6AE3F" &&  (<MainActionButton label={ctaText} handleClick={onCta} />)}
+
       </div>
     </div>
   );
