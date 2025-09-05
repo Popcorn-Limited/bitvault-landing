@@ -105,7 +105,7 @@ export function Card(props: Props) {
             display: "flex",
             alignItems: "baseline",
             gap: 8,
-            marginBottom: 30
+            marginBottom: 5
           }}
         >
           {apy ? (
@@ -208,10 +208,9 @@ export function Card(props: Props) {
       </ul>
 
       {/* Button */}
-      <div style={{ marginTop: "auto", paddingTop: 80 }}>
+      <div style={{ marginTop: "auto", paddingTop: 20 }}>
         {backgroundColor == "#F6AE3F" &&  (<SecondaryActionButton label={ctaText} handleClick={onCta} />)}
         {backgroundColor !== "#F6AE3F" &&  (<MainActionButton label={ctaText} handleClick={onCta} />)}
-
       </div>
     </div>
   );
