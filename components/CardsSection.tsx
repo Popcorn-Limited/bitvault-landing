@@ -90,21 +90,10 @@ export default function CardsSection() {
 
       {/* Cards Container */}
       <CardsRow>
-        <div
-          style={{
-            width: "100%",
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 24,
-            padding: 16,
-            boxSizing: "border-box",
-            height: "100%",
-            minHeight: 0,
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full p-4">
           <Card
             tokenImage={tokensbvUSD}
-            backgroundColor="#F6AE3F"
+            backgroundColor="#F6AE3F" 
             textColor="black"
             imageUrl={"/images/sbvUSDBackground.jpg"}
             badgeText="sbvUSD"
