@@ -13,7 +13,7 @@ type Props = {
   subhead?: string;
   bullets: string[];
   ctaText: string;
-  onCta: () => void;
+  onCta?: () => void;
 };
 
 export function Card(props: Props) {

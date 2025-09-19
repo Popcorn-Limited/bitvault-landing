@@ -102,9 +102,6 @@ export default function CardsSection() {
             subhead="Open to All"
             bullets={sbvUSDBullets}
             ctaText="Earn Now"
-            onCta={() =>
-              window.open("https://app.bitvault.finance/vault", "_blank")
-            }
           />
 
           <Card
