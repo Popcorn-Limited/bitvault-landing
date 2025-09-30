@@ -43,7 +43,7 @@ export default function MediaPage() {
                   <AssetCard>
                     <AssetBox>
                       <Image
-                        src="/images/nameLogoWhite.png"
+                        src="/images/NameLogoWhite.png"
                         alt=""
                         fill
                         className="object-cover"
@@ -53,7 +53,7 @@ export default function MediaPage() {
                   <AssetCard>
                     <AssetBox dark>
                       <Image
-                        src="/images/nameLogoBlack.png"
+                        src="/images/NameLogoBlack.png"
                         alt=""
                         fill
                         className="object-cover"
@@ -71,22 +71,22 @@ export default function MediaPage() {
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-2">
                   <AssetCard>
                     <AssetBox>
-                      <Image src="/images/logoBlackWhite.png" alt="" fill />
+                      <Image src="/images/LogoBlackWhite.png" alt="" fill />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
                     <AssetBox>
-                      <Image src="/images/logoWhiteBlack.png" alt="" fill />
+                      <Image src="/images/LogoWhiteBlack.png" alt="" fill />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
                     <AssetBox>
-                      <Image src="/images/logoBlackYellow.png" alt="" fill />
+                      <Image src="/images/LogoBlackYellow.png" alt="" fill />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
                     <AssetBox>
-                      <Image src="/images/logoWhiteOrange.png" alt="" fill />
+                      <Image src="/images/LogoWhiteOrange.png" alt="" fill />
                     </AssetBox>
                   </AssetCard>
                 </div>
@@ -101,7 +101,7 @@ export default function MediaPage() {
                   <AssetCard>
                     <AssetBox>
                       <Image
-                        src="/images/nameWhite.png"
+                        src="/images/NameWhite.png"
                         alt=""
                         fill
                         className="object-contain"
@@ -111,7 +111,7 @@ export default function MediaPage() {
                   <AssetCard>
                     <AssetBox dark>
                       <Image
-                        src="/images/nameBlack.png"
+                        src="/images/NameBlack.png"
                         alt=""
                         fill
                         className="object-contain"
