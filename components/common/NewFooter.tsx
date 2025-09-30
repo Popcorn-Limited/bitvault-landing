@@ -38,9 +38,9 @@ export default function Footer() {
               <IconX
                 aria-label="X"
               />
-              <IconDiscord
+              {/* <IconDiscord
                 aria-label="Discord"
-              />
+              /> */}
               <IconTelegram
                 aria-label="Telegram"
               />
@@ -159,7 +159,7 @@ function IconTelegram() {
   return (
     <div className="flex items-center gap-3">
       <a
-        href="https://t.me/bitvaultfinance"
+        href="https://t.me/bitvaultTG"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="X (Twitter)"

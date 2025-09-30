@@ -42,7 +42,6 @@ export default function Navbar({ showApy = true }: { showApy?: boolean }) {
           </Link>
           <Link
             href={`https://bitvault.finance/media`}
-            target="_blank"
             passHref
           >
             <h2 className="text-xl leading-none hover:text-secondaryGold">
@@ -66,7 +65,7 @@ export default function Navbar({ showApy = true }: { showApy?: boolean }) {
                 </h2>
               </Link>
               <Link
-                href={`https://t.me/bitvaultfinance`}
+                href={`https://t.me/bitvaultTG`}
                 target="_blank"
                 passHref
               >
