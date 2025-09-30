@@ -7,7 +7,7 @@ const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
   notation: "compact",
 });
 
-export default function Navbar(): JSX.Element {
+export default function Navbar({ showApy = true }: { showApy?: boolean }) {
   const [tvl, setTvl] = useState<string>(formatter.format(200_000_000));
   const [apy, setApy] = useState<number>(12);
 
@@ -38,6 +38,15 @@ export default function Navbar(): JSX.Element {
           >
             <h2 className="text-xl leading-none hover:text-secondaryGold">
               Docs
+            </h2>
+          </Link>
+          <Link
+            href={`https://bitvault.finance/media`}
+            target="_blank"
+            passHref
+          >
+            <h2 className="text-xl leading-none hover:text-secondaryGold">
+              Media
             </h2>
           </Link>
           <Popover className="relative focus:outline-none text-center">
@@ -74,16 +83,16 @@ export default function Navbar(): JSX.Element {
       </div>
 
       <div className="hidden sm:block space-y-8 mt-4 px-2 sm:px-12 xl:px-24">
-        <div>
-          <h3 className="text-primaryGold text-xl leading-none text-end">APY</h3>
-          <h4 className="text-white text-3xl font-bold leading-none text-end">{apy}%</h4>
-        </div>
-        {/* <div>
-            <h3 className="text-primaryGold text-xl leading-none text-end">TVL</h3>
-            <h4 className="text-white text-3xl font-bold leading-none text-end">{tvl}</h4>
-          </div> */}
+      {showApy && (
 
+      <div>
+        <h3 className="text-primaryGold text-xl leading-none text-end">APY</h3>
+        <h4 className="text-white text-3xl font-bold leading-none text-end">{apy}%</h4>
       </div>
+      )}
+    </div>
+
+
     </div>
   );
 }
