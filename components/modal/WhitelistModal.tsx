@@ -247,7 +247,7 @@ export function SuccessModalContent() {
           textAlign: "center",
         }}
       >
-        You’re on the list!
+        You&apos;re on the list!
       </h2>
 
       {/* Subtitle */}
@@ -262,8 +262,8 @@ export function SuccessModalContent() {
           margin: "8px auto 0 auto",
         }}
       >
-        We'll email you launch alerts and updates.
-        If you've added a wallet, we'll confirm your whitelist spot!
+        We&apos;ll email you launch alerts and updates.
+        If you&apos;ve added a wallet, we&apos;ll confirm your whitelist spot!
       </p>
 
       {/* Buttons */}
