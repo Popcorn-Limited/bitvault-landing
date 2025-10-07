@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import { Herr_Von_Muellerhoff } from "next/font/google";
 import InvestorSection from "@/components/InvestorSection";
 import CardsSection from "@/components/CardsSection";
+import { ModalRoot } from "@/components/modal/ModalService";
 
 const khTeka = localFont({
   src: "../public/KH_Teka/KHTeka-Regular.woff",
@@ -53,6 +54,7 @@ const IndexPage = () => {
         }}
       >
         <CardsSection />
+        <ModalRoot />
       </div>
     </div>
   );

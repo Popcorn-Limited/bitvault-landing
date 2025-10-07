@@ -1,6 +1,16 @@
 import Image from "next/image";
-import MainActionButton from "./common/MainActionButton";
-import SecondaryActionButton from "./common/SecondaryActionButton";
+import { useState } from "react";
+
+type CTA = {
+  label: string;
+  onClick: () => void;
+  textColor?: string;
+  textHoverColor?: string;
+  buttonColor?: string;
+  hoverColor?: string;
+  borderColor?: string;
+  borderHoverColor?: string;
+}
 
 type Props = {
   tokenImage: string;
@@ -12,8 +22,8 @@ type Props = {
   headline: string;
   subhead?: string;
   bullets: string[];
-  ctaText: string;
-  onCta: () => void;
+  cta: CTA;
+  cta2?: CTA;
 };
 
 export function Card(props: Props) {
@@ -27,10 +37,9 @@ export function Card(props: Props) {
     headline,
     subhead,
     bullets,
-    ctaText,
-    onCta,
+    cta,
+    cta2,
   } = props;
-
 
   // constants for alignment
   const INTRO_HEIGHT = "var(--intro-h)";
@@ -82,8 +91,8 @@ export function Card(props: Props) {
             src={tokenImage}
             alt={badgeText}
             style={{
-              width: "30px",
-              height: "30px",
+              width: "35px",
+              height: "35px",
               borderRadius: "50%",
               objectFit: "cover",
             }}
@@ -105,7 +114,6 @@ export function Card(props: Props) {
             display: "flex",
             alignItems: "baseline",
             gap: 8,
-            marginBottom: 5
           }}
         >
           {apy ? (
@@ -145,7 +153,7 @@ export function Card(props: Props) {
             <div
               style={{
                 fontSize: "clamp(14px, 2.2vh, 20px)",
-                fontWeight: 300,
+                fontWeight: 400,
                 color: "black",
               }}
             >
@@ -170,11 +178,12 @@ export function Card(props: Props) {
         style={{
           listStyle: "none",
           padding: 0,
-          marginTop: 15,
+          marginTop: 30,
           display: "flex",
           flexDirection: "column",
           gap: "clamp(6px, 1.2vh, 10px)",
           fontSize: "clamp(13px, 2vh, 18px)",
+          fontWeight: 400,
           minHeight: 0,
         }}
       >
@@ -207,11 +216,55 @@ export function Card(props: Props) {
         ))}
       </ul>
 
-      {/* Button */}
-      <div style={{ marginTop: "auto", paddingTop: 20 }}>
-        {backgroundColor == "#F6AE3F" &&  (<SecondaryActionButton label={ctaText} handleClick={onCta} />)}
-        {backgroundColor !== "#F6AE3F" &&  (<MainActionButton label={ctaText} handleClick={onCta} />)}
+      {/* CTA */}
+      <div
+        style={{
+          marginTop: "auto",
+          paddingTop: "50px",
+          display: "flex",
+          flexDirection: "row",
+          gap: 10,
+        }}
+      >
+        {cta &&
+          <CTAButton {...cta} />
+        }
+        {cta && cta2 &&
+          <CTAButton {...cta2} />
+        }
       </div>
     </div>
   );
+}
+
+
+function CTAButton(cta: CTA) {
+  const [isHovered, setIsHovered] = useState(false);
+  return (
+    <button
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        height: 48,
+        width: "100%",
+        padding: "0 14px",
+        fontSize: 16,
+        borderRadius: 4,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        whiteSpace: "nowrap",
+        textDecoration: "none",
+        cursor: "pointer",
+        transition: "background 50ms, color 50ms, border 50ms",
+        color: isHovered ? cta.textHoverColor : cta.textColor,
+        background: isHovered ? cta.hoverColor : cta.buttonColor,
+        border: isHovered ? `2px solid ${cta.borderHoverColor ?? cta.hoverColor}` : `2px solid ${cta.borderColor ?? cta.buttonColor}`
+      }}
+      onClick={cta.onClick}
+    >
+      {cta.label}
+    </button>
+
+  )
 }

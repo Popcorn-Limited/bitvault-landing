@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import "../styles/globals.css";
+import { ModalProvider } from "@/components/modal/ModalService";
 
 
 const { title, description, socialShareImage } = {
@@ -56,7 +57,9 @@ export default function MyApp(props: any) {
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
-      {getLayout(<Component {...pageProps} />)}
+      <ModalProvider>
+        {getLayout(<Component {...pageProps} />)}
+      </ModalProvider>
     </React.Fragment>
   );
 }

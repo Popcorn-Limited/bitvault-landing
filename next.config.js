@@ -24,6 +24,8 @@ const nextConfig = {
     ZK_FETCH_APP_ID: process.env.ZK_FETCH_APP_ID,
     ZK_FETCH_SECRET: process.env.ZK_FETCH_SECRET,
     DEBANK_API_KEY: process.env.DEBANK_API_KEY,
+    SUPABASE_URL: process.env.SUPABASE_URL,
+    SUPABASE_KEY: process.env.SUPABASE_KEY,
   },
   async headers() {
     return [{

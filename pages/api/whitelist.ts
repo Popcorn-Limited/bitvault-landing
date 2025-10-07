@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,15 +10,14 @@ export default async function handler(
     return res.status(405).json({ error: "Method Not Allowed" });
   }
   try {
-    const { name, email, telegram, amount, assets, newsletter } = req.body;
-    const assetsArray = Object.keys(assets).filter(key => assets[key]).join(', ');
+    const { email, telegram, evmAddress, newsletter } = req.body;
 
     const supabase = createClient(process.env.SUPABASE_URL as string, process.env.SUPABASE_KEY as string)
 
     const { data, error } = await supabase
-      .from('Instititutional')
+      .from('Whitelist')
       .insert([
-        { name, email, telegram, amount, assets: assetsArray, newsletter },
+        { email, telegram, evmAddress, newsletter },
       ])
       .select()
 

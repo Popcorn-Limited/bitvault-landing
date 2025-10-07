@@ -8,7 +8,6 @@ const POPSTAR_ADDRESS = "0x6B1741143D3F2C4f1EdA12e19e9518489DF03e04"
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-
   let response;
   try {
     const client = createPublicClient({
