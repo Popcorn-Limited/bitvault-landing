@@ -43,20 +43,20 @@ export default function MediaPage() {
                   <AssetCard>
                     <AssetBox>
                       <Image
-                        src="/images/NameLogoWhite.png"
+                        src="/images/NameLogoBlack.png"
                         alt=""
                         fill
-                        className="object-cover"
+                        className="object-contain object-center p-20"
                       />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
                     <AssetBox dark>
                       <Image
-                        src="/images/NameLogoBlack.png"
+                        src="/images/NameLogoWhite.png"
                         alt=""
                         fill
-                        className="object-cover"
+                        className="object-contain object-center p-20"
                       />
                     </AssetBox>
                   </AssetCard>
@@ -70,23 +70,24 @@ export default function MediaPage() {
               >
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-2">
                   <AssetCard>
-                    <AssetBox>
-                      <Image src="/images/LogoBlackWhite.png" alt="" fill />
+                    <AssetBox dark>
+                      <Image src="/images/LogoWhite.png" alt="" fill className="object-contain object-center p-24"/>
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
                     <AssetBox>
-                      <Image src="/images/LogoWhiteBlack.png" alt="" fill />
+                      <Image src="/images/LogoBlack.png" alt="" fill                         className="object-contain object-center p-24"
+                      />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
-                    <AssetBox>
-                      <Image src="/images/LogoBlackYellow.png" alt="" fill />
+                    <AssetBox dark>
+                      <Image src="/images/LogoYellow.png" alt="" fill className="object-contain object-center p-24"/>
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
-                    <AssetBox>
-                      <Image src="/images/LogoWhiteOrange.png" alt="" fill />
+                    <AssetBox orange>
+                      <Image src="/images/LogoYellowWhite.png" alt="" fill className="object-contain object-center p-24"/>
                     </AssetBox>
                   </AssetCard>
                 </div>
@@ -101,21 +102,19 @@ export default function MediaPage() {
                   <AssetCard>
                     <AssetBox>
                       <Image
-                        src="/images/NameWhite.png"
+                        src="/images/NameBlack.png"
                         alt=""
                         fill
-                        className="object-contain"
-                      />
+                        className="object-contain object-center p-24"                      />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
                     <AssetBox dark>
                       <Image
-                        src="/images/NameBlack.png"
+                        src="/images/NameWhite.png"
                         alt=""
                         fill
-                        className="object-contain"
-                      />
+                        className="object-contain object-center p-24"                      />
                     </AssetBox>
                   </AssetCard>
                 </div>
@@ -137,21 +136,19 @@ export default function MediaPage() {
                   <AssetCard>
                     <AssetBox>
                       <Image
-                        src="/images/Background1.png"
+                        src="/images/Patterns.png"
                         alt=""
                         fill
-                        className="object-cover"
-                      />
+                        className="object-cover"                  />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
                     <AssetBox>
                       <Image
-                        src="/images/Background2.png"
+                        src="/images/Patterns2.png"
                         alt=""
                         fill
-                        className="object-cover"
-                      />
+                        className="object-contain"                      />
                     </AssetBox>
                   </AssetCard>
                 </div>
@@ -218,16 +215,18 @@ function AssetCard({ children }: { children: ReactNode }) {
 
 function AssetBox({
   dark = false,
+  orange = false,
   children,
 }: {
   dark?: boolean;
+  orange?: boolean;
   children?: ReactNode;
 }) {
   return (
     <div
       className={[
         "relative h-[320px] w-[555px] overflow-hidden rounded-xl",
-        dark ? "bg-neutral-950" : "bg-neutral-50",
+        dark ? "bg-neutral-950" : orange ? "bg-gradient-to-b from-[#FF9B00] to-[#FFC873]": "bg-neutral-50",
       ].join(" ")}
     >
       <div className="absolute inset-0 grid place-items-center text-xs  text-neutral-400"></div>
