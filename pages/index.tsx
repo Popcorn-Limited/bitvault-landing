@@ -7,6 +7,7 @@ import { Herr_Von_Muellerhoff } from "next/font/google";
 import InvestorSection from "@/components/InvestorSection";
 import CardsSection from "@/components/CardsSection";
 import { ModalRoot } from "@/components/modal/ModalService";
+import NewFooter from "@/components/common/NewFooter";
 
 const khTeka = localFont({
   src: "../public/KH_Teka/KHTeka-Regular.woff",
@@ -37,7 +38,7 @@ const IndexPage = () => {
             "linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('/images/background.png') no-repeat center/cover",
         }}
       >
-        <Navbar />
+        <Navbar/>
         <main className="flex items-center justify-center px-4">
           <div className="w-full max-w-[1200px] flex flex-col items-center gap-6 md:gap-10 -translate-y-[4vh] md:-translate-y-[6vh]">
             <HeroSection />
@@ -56,6 +57,7 @@ const IndexPage = () => {
         <CardsSection />
         <ModalRoot />
       </div>
+      <NewFooter />
     </div>
   );
 };

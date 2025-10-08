@@ -13,7 +13,6 @@ export default function SecondaryActionButton({
       className={`w-full px-2 py-2.5 rounded
                   bg-black border border-black text-[#F6AE3F] font-semibold text-base
                   transition-all ease-in-out duration-500
-                  hover:bg-[#E39B31] hover:border-[#E39B31]
                   disabled:bg-customGray100 disabled:border-customGray100 disabled:text-[#F6AE3F] disabled:cursor-not-allowed
                   disabled:hover:border-customGray100 disabled:hover:bg-customGray100 disabled:hover:text-[#F6AE3F]
                   ${hidden ? "hidden" : ""}`}

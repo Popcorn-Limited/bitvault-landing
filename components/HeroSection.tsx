@@ -23,7 +23,6 @@ export default function HeroSection(): JSX.Element {
           <div className="mx-auto w-60 mt-8">
             <MainActionButton
               label="Launch App"
-              handleClick={() => router.push("https://app.bitvault.finance/")}
             />
           </div>
         </div>
