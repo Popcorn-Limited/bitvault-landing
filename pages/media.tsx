@@ -18,7 +18,7 @@ export default function MediaPage() {
           className="min-h-svh w-full grid grid-rows-[auto_1fr]"
           style={{
             background:
-              "linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('/images/background.png') repeat center center",
+              "linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('/images/background.png') no-repeat center/cover",
             backgroundAttachment: "fixed",
           }}
         >
