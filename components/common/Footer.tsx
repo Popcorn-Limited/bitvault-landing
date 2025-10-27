@@ -12,12 +12,12 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-black text-neutral-300">
       <div
         aria-hidden
-        className="absolute inset-0"
+        className="absolute inset-0 no-repeat bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/bannerfooter.png')",
         }}
       />
-      <div className="relative mx-auto w-full max-w-7xl h-[342px] px-6 py-10 md:py-14 flex flex-col justify-end">
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-10 md:py-14 flex flex-col justify-end">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:items-stretch">
           <div className="md:col-span-6">
             <div className="flex items-center gap-3">
@@ -158,7 +158,7 @@ function IconTelegram() {
   return (
     <div className="flex items-center gap-3">
       <a
-        href="https://t.me/bitvaultTG"
+        href="t.me/bitvaultannouncements"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="X (Twitter)"

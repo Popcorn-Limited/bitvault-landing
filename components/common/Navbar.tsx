@@ -1,6 +1,8 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import Link from "next/link";
 import { useState } from "react";
+import MainActionButton from "./MainActionButton";
+import { useRouter } from "next/router";
 
 const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
   //@ts-ignore
@@ -8,12 +10,12 @@ const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
 });
 
 export default function Navbar({ showApy = true }: { showApy?: boolean }) {
-  const [tvl, setTvl] = useState<string>(formatter.format(200_000_000));
+  const router = useRouter();
   const [apy, setApy] = useState<number>(12);
 
   return (
     <div className="">
-      <div className="flex flex-col md:flex-row items-center justify-between w-full z-10 px-8 md:px-12 xl:px-24 py-4 bg-black border-b border-white/10 text-white">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between w-full z-10 px-8 md:px-12 xl:px-24 py-4 bg-black border-b border-white/10 text-white">
 
         <Link
           href={`/`}
@@ -65,7 +67,7 @@ export default function Navbar({ showApy = true }: { showApy?: boolean }) {
                 </h2>
               </Link>
               <Link
-                href={`https://t.me/bitvaultTG`}
+                href={`t.me/bitvaultannouncements`}
                 target="_blank"
                 passHref
               >
@@ -77,19 +79,26 @@ export default function Navbar({ showApy = true }: { showApy?: boolean }) {
           </Popover>
         </div>
 
-        <div className="w-40"></div>
+        <div className="w-40">
+          <div className="hidden md:block w-full">
+            <MainActionButton
+              label="Launch App"
+              handleClick={() => router.push("https://app.bitvault.finance")}
+            />
+          </div>
+        </div>
 
       </div>
 
       <div className="hidden sm:block space-y-8 mt-4 px-2 sm:px-12 xl:px-24">
-      {showApy && (
+        {showApy && (
 
-      <div>
-        <h3 className="text-primaryGold text-xl leading-none text-end">APY</h3>
-        <h4 className="text-white text-3xl font-bold leading-none text-end">{apy}%</h4>
+          <div>
+            <h3 className="text-primaryGold text-xl leading-none text-end">APY</h3>
+            <h4 className="text-white text-3xl font-bold leading-none text-end">{apy}%</h4>
+          </div>
+        )}
       </div>
-      )}
-    </div>
 
 
     </div>

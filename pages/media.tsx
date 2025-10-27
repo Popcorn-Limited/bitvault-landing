@@ -3,7 +3,7 @@ import Navbar from "@/components/common/Navbar";
 import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
-import NewFooter from "@/components/common/NewFooter";
+import NewFooter from "@/components/common/Footer";
 
 const khTeka = localFont({
   src: "../public/KH_Teka/KHTeka-Regular.woff",
@@ -76,7 +76,7 @@ export default function MediaPage() {
                   </AssetCard>
                   <AssetCard>
                     <AssetBox>
-                      <Image src="/images/LogoBlack.png" alt="" fill                         className="object-contain object-center p-24"
+                      <Image src="/images/LogoBlack.png" alt="" fill className="object-contain object-center p-24"
                       />
                     </AssetBox>
                   </AssetCard>
