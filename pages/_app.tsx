@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import "../styles/globals.css";
 import { ModalProvider } from "@/components/modal/ModalService";
+import Script from "next/script";
 
 
 const { title, description, socialShareImage } = {
@@ -56,7 +57,24 @@ export default function MyApp(props: any) {
         <meta name="twitter:image" content={socialShareImage} />
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+        {/* gtag loader */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-5EVBD6WBY7`}
+          strategy="afterInteractive"
+        />
+        {/* gtag init */}
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer && dataLayer.push(arguments);}
+            gtag('js', new Date());
+            // Disable the automatic page_view so we can control SPA route views:
+            gtag('config', 'G-5EVBD6WBY7', { send_page_view: false });
+          `}
+        </Script>
       </Head>
+
       <ModalProvider>
         {getLayout(<Component {...pageProps} />)}
       </ModalProvider>
