@@ -96,7 +96,7 @@ export default function CardsSection() {
       {/* Cards Container */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8">
         <Card
-          tokenImage={tokenbvUSD}
+          tokenImage={tokensbvUSD}
           backgroundColor="#F6AE3F"
           textColor="black"
           imageUrl={"/images/sbvUSDBackground.jpg"}
@@ -131,7 +131,7 @@ export default function CardsSection() {
         />
 
         <Card
-          tokenImage={tokensbvUSD}
+          tokenImage={tokenbvUSD}
           backgroundColor="#23262F"
           textColor="white"
           imageUrl={"/images/bvUSDBackground.jpg"}
