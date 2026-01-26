@@ -53,6 +53,10 @@ const nextConfig = {
         source: "/api/balancerProxy/:path*",
         destination: "https://api.balancer.fi/:path*",
       },
+      {
+        source: "/",
+        destination: "/index.html",
+      },
     ];
   },
 };

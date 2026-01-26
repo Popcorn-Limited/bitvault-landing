@@ -1,6 +1,6 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MainActionButton from "./MainActionButton";
 import { useRouter } from "next/router";
 
@@ -10,97 +10,77 @@ const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
 });
 
 export default function Navbar({ showApy = true }: { showApy?: boolean }) {
-  const router = useRouter();
-  const [apy, setApy] = useState<number>(12);
+  const mobileNavRef = useRef<HTMLElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
+  
+  // Escape key handler for mobile menu
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        const mobileNav = mobileNavRef.current;
+        const menuBtn = menuBtnRef.current;
+        if (mobileNav?.classList.contains("active")) {
+          mobileNav.classList.remove("active");
+          menuBtn?.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    const mobileNav = mobileNavRef.current;
+    const menuBtn = menuBtnRef.current;
+
+    mobileNav?.classList.toggle("active");
+    menuBtn?.classList.toggle("active");
+
+    if (mobileNav?.classList.contains("active")) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  };
 
   return (
     <div className="">
-      <div className="flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between w-full z-10 px-8 md:px-12 xl:px-24 py-4 bg-black border-b border-white/10 text-white">
-
-        <Link
-          href={`/`}
-          passHref
-          className="flex flex-row items-center gap-2"
-        >
-          <img
-            src="/images/favicon.svg"
-            alt="Logo"
-            className="w-12 h-12 md:w-10 md:h-10 text-white"
-          />
-          <h2 className="text-3xl font-bold leading-none">
-            BitVault
-          </h2>
-        </Link>
-
-        <div className="flex flex-row items-center gap-4">
-          <Link
-            href={`https://docs.bitvault.finance/`}
-            target="_blank"
-            passHref
-          >
-            <h2 className="text-xl leading-none hover:text-secondaryGold">
-              Docs
-            </h2>
-          </Link>
-          <Link
-            href={`https://bitvault.finance/media`}
-            passHref
-          >
-            <h2 className="text-xl leading-none hover:text-secondaryGold">
-              Media
-            </h2>
-          </Link>
-          <Popover className="relative focus:outline-none text-center">
-            <PopoverButton className="focus:outline-none border-none">
-              <h2 className="text-xl leading-none hover:text-secondaryGold mt-1">
-                Community
-              </h2>
-            </PopoverButton>
-            <PopoverPanel anchor="bottom" className="flex flex-col mt-2 py-4 px-4 space-y-2 text-center text-white bg-customNeutral300 rounded-lg border border-white/10">
-              <Link
-                href={`https://x.com/BitVaultFinance`}
-                target="_blank"
-                passHref
-              >
-                <h2 className="text-xl leading-none hover:text-secondaryGold text-center mx-auto">
-                  X (Twitter)
-                </h2>
-              </Link>
-              <Link
-                href={`t.me/bitvaultannouncements`}
-                target="_blank"
-                passHref
-              >
-                <h2 className="text-xl leading-none hover:text-secondaryGold mx-auto">
-                  Telegram
-                </h2>
-              </Link>
-            </PopoverPanel>
-          </Popover>
-        </div>
-
-        <div className="w-40">
-          <div className="hidden md:block w-full">
-            <MainActionButton
-              label="Launch App"
-              handleClick={() => router.push("https://app.bitvault.finance")}
-            />
+      <header className="header">
+        <a href="/" className="logo">
+          <div className="logo-icon">
+            <img src="/images/favicon.svg" alt="BitVault" />
           </div>
-        </div>
+          <span className="logo-text">BitVault</span>
+        </a>
 
-      </div>
+        <nav className="nav-links">
+          <a href="https://docs.bitvault.finance/" target="_blank" rel="noopener noreferrer" className="nav-link">Docs</a>
+          <a href="/blog" className="nav-link">Blog</a>
+          <a href="/media" className="nav-link">Media</a>
+          <a href="/bitvaultreferrals.html" className="nav-link">Rewards</a>
+          <a href="https://t.me/bitvaultfinance" target="_blank" rel="noopener noreferrer" className="nav-link">Community</a>
+        </nav>
 
-      <div className="hidden sm:block space-y-8 mt-4 px-2 sm:px-12 xl:px-24">
-        {showApy && (
+        <div className="nav-spacer"></div>
 
-          <div>
-            <h3 className="text-primaryGold text-xl leading-none text-end">APY</h3>
-            <h4 className="text-white text-3xl font-bold leading-none text-end">{apy}%</h4>
-          </div>
-        )}
-      </div>
+        {/* Mobile Menu Button */}
+        <button ref={menuBtnRef} className="mobile-menu-btn" aria-label="Toggle menu" onClick={toggleMobileMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </header>
 
-
+      {/* Mobile Navigation Overlay */}
+      <nav ref={mobileNavRef} className="mobile-nav" id="mobileNav">
+        <a href="https://docs.bitvault.finance/" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={toggleMobileMenu}>Docs</a>
+        <a href="/blog" className="nav-link" onClick={toggleMobileMenu}>Blog</a>
+        <a href="/media" className="nav-link" onClick={toggleMobileMenu}>Media</a>
+        <a href="/bitvaultreferrals.html" className="nav-link" onClick={toggleMobileMenu}>Rewards</a>
+        <a href="https://t.me/bitvaultfinance" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={toggleMobileMenu}>Community</a>
+      </nav>
     </div>
   );
 }

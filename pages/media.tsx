@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
 import NewFooter from "@/components/common/Footer";
+import Head from "next/head";
+import Footer from "@/components/common/Footer";
 
 const khTeka = localFont({
   src: "../public/KH_Teka/KHTeka-Regular.woff",
@@ -13,7 +15,33 @@ const khTeka = localFont({
 export default function MediaPage() {
   return (
     <>
-      <div className={`${khTeka.variable} bg-background`}>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <title>BitVault - Bitcoin-Anchored On-Chain Credit</title>
+        <meta name="description" content="Institutional USD backed by Bitcoin and tokenized equities." />
+
+        {/* Open Graph / Social Sharing */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="BitVault - Bitcoin-Anchored On-Chain Credit" />
+        <meta property="og:description" content="Institutional USD backed by Bitcoin and tokenized equities." />
+        <meta property="og:image" content="https://bitvault.finance/images/og-image.jpg" />
+        <meta property="og:url" content="https://bitvault.finance/" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="BitVault - Bitcoin-Anchored On-Chain Credit" />
+        <meta name="twitter:description" content="Institutional USD backed by Bitcoin and tokenized equities." />
+        <meta name="twitter:image" content="https://bitvault.finance/images/og-image.jpg" />
+
+        <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      </Head>
+      {/* Background for iOS compatibility */}
+      <div className="page-background" aria-hidden="true"></div>
+      <div className="hero-bg">
         <div
           className="min-h-svh w-full grid grid-rows-[auto_1fr]"
           style={{
@@ -22,7 +50,7 @@ export default function MediaPage() {
             backgroundAttachment: "fixed",
           }}
         >
-          <Navbar showApy={false} />
+          <Navbar />
           <main className="flex items-center justify-center px-4 mb-36">
             <div className="w-full max-w-[1200px] flex flex-col items-center">
               <h1 className="text-3xl tracking-tight mt-20 mb-4 text-white sm:text-[48px]">
@@ -71,7 +99,7 @@ export default function MediaPage() {
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-2">
                   <AssetCard>
                     <AssetBox dark>
-                      <Image src="/images/LogoWhite.png" alt="" fill className="object-contain object-center p-24"/>
+                      <Image src="/images/LogoWhite.png" alt="" fill className="object-contain object-center p-24" />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
@@ -82,12 +110,12 @@ export default function MediaPage() {
                   </AssetCard>
                   <AssetCard>
                     <AssetBox dark>
-                      <Image src="/images/LogoYellow.png" alt="" fill className="object-contain object-center p-24"/>
+                      <Image src="/images/LogoYellow.png" alt="" fill className="object-contain object-center p-24" />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
                     <AssetBox orange>
-                      <Image src="/images/LogoYellowWhite.png" alt="" fill className="object-contain object-center p-24"/>
+                      <Image src="/images/LogoYellowWhite.png" alt="" fill className="object-contain object-center p-24" />
                     </AssetBox>
                   </AssetCard>
                 </div>
@@ -105,7 +133,7 @@ export default function MediaPage() {
                         src="/images/NameBlack.png"
                         alt=""
                         fill
-                        className="object-contain object-center p-24"                      />
+                        className="object-contain object-center p-24" />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
@@ -114,7 +142,7 @@ export default function MediaPage() {
                         src="/images/NameWhite.png"
                         alt=""
                         fill
-                        className="object-contain object-center p-24"                      />
+                        className="object-contain object-center p-24" />
                     </AssetBox>
                   </AssetCard>
                 </div>
@@ -139,7 +167,7 @@ export default function MediaPage() {
                         src="/images/Patterns.png"
                         alt=""
                         fill
-                        className="object-cover"                  />
+                        className="object-cover" />
                     </AssetBox>
                   </AssetCard>
                   <AssetCard>
@@ -148,7 +176,7 @@ export default function MediaPage() {
                         src="/images/Patterns2.png"
                         alt=""
                         fill
-                        className="object-contain"                      />
+                        className="object-contain" />
                     </AssetBox>
                   </AssetCard>
                 </div>
@@ -164,7 +192,7 @@ export default function MediaPage() {
               </div>
             </div>
           </main>
-          <NewFooter />
+          <Footer />
         </div>
       </div>
     </>
@@ -226,7 +254,7 @@ function AssetBox({
     <div
       className={[
         "relative h-[320px] w-[555px] overflow-hidden rounded-xl",
-        dark ? "bg-neutral-950" : orange ? "bg-gradient-to-b from-[#FF9B00] to-[#FFC873]": "bg-neutral-50",
+        dark ? "bg-neutral-950" : orange ? "bg-gradient-to-b from-[#FF9B00] to-[#FFC873]" : "bg-neutral-50",
       ].join(" ")}
     >
       <div className="absolute inset-0 grid place-items-center text-xs  text-neutral-400"></div>
@@ -251,30 +279,6 @@ function InlineLink({ href, children }: { href: string; children: ReactNode }) {
     >
       {children}
     </Link>
-  );
-}
-
-function Swatch({
-  title,
-  subtitle,
-  className = "",
-}: {
-  title: string;
-  subtitle?: string;
-  className?: string;
-}) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-neutral-900/60 shadow-md backdrop-blur\">
-      <div
-        className={["h-[320px] w-[555px] rounded-lg", className].join(" ")}
-      />
-      <div className="mt-3 flex items-center justify-between">
-        <span className="text-sm text-white">{title}</span>
-        {subtitle && (
-          <span className="text-xs text-neutral-400">{subtitle}</span>
-        )}
-      </div>
-    </div>
   );
 }
 
