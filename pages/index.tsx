@@ -144,9 +144,9 @@ const IndexPage = () => {
                   <span className="ticker-item ticker-stock"><img src="/images/logos/assets/meta.svg" alt="META" /> META</span>
                   <span className="ticker-item ticker-stock"><img src="/images/logos/assets/tesla.svg" alt="TSLA" /> TSLA</span>
                   {/* Duplicated for seamless loop */}
-                  <span className="ticker-item"><img src="/images/logos/BTC.svg" alt="BTC" /> BTC</span>
+                  <span className="ticker-item"><img src="/images/logos/assets/BTC.svg" alt="BTC" /> BTC</span>
                   <span className="ticker-item"><img src="/images/logos/assets/WBTC.svg" alt="WBTC" /> WBTC</span>
-                  <span className="ticker-item"><img src="/images/logos/cbBTC.svg" alt="cbBTC" /> cbBTC</span>
+                  <span className="ticker-item"><img src="/images/logos/assets/cbBTC.svg" alt="cbBTC" /> cbBTC</span>
                   <span className="ticker-item"><img src="/images/logos/assets/tBTC.svg" alt="tBTC" /> tBTC</span>
                   <span className="ticker-item"><img src="/images/logos/assets/LBTC.svg" alt="LBTC" /> LBTC</span>
                   <span className="ticker-item"><img src="/images/logos/assets/enzoBTC.svg" alt="enzoBTC" /> enzoBTC</span>
@@ -293,7 +293,7 @@ const IndexPage = () => {
                 <li><span className="check" aria-hidden="true">&#10003;</span><span>KYC/KYB required</span></li>
               </ul>
               <div className="card-cta">
-                <button className="btn btn-primary">
+                <button className="btn btn-primary" onClick={() => window.open("https://app.bitvault.finance", "_blank")}>
                   <span className="btn-text">Borrow Now</span>
                 </button>
               </div>
@@ -322,7 +322,7 @@ const IndexPage = () => {
                 <li><span className="check" aria-hidden="true">&#10003;</span><span>Backed 100% by bluechip stablecoins</span></li>
               </ul>
               <div className="card-cta">
-                <button className="btn btn-secondary">
+                <button className="btn btn-secondary" onClick={() => window.open("https://app.bitvault.finance", "_blank")}>
                   <span className="btn-text">Earn Now</span>
                 </button>
               </div>
@@ -350,7 +350,7 @@ const IndexPage = () => {
                 <li><span className="check" aria-hidden="true">&#10003;</span><span>Referral bonuses</span></li>
               </ul>
               <div className="card-cta">
-                <button className="btn btn-primary">
+                <button className="btn btn-primary" onClick={() => window.open("https://app.bitvault.finance", "_blank")}>
                   <span className="btn-text">Coming Soon</span>
                 </button>
               </div>

@@ -28,7 +28,7 @@ export default function Footer() {
                   <img src="/images/twitter.png" alt="Twitter" />
                 </a>
               </Link>
-              <Link legacyBehavior href="https://t.me/bitvaultTG" passHref>
+              <Link legacyBehavior href="https://t.me/bitvaultfinance" passHref>
                 <a target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                   <img src="/images/telegram.png" alt="Telegram" />
                 </a>
