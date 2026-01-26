@@ -1,18 +1,11 @@
-import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import MainActionButton from "./MainActionButton";
-import { useRouter } from "next/router";
+import { useEffect, useRef} from "react";
 
-const formatter: Intl.NumberFormat = Intl.NumberFormat("en", {
-  //@ts-ignore
-  notation: "compact",
-});
 
-export default function Navbar({ showApy = true }: { showApy?: boolean }) {
+export default function Navbar() {
   const mobileNavRef = useRef<HTMLElement>(null);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
-  
+
   // Escape key handler for mobile menu
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -48,19 +41,31 @@ export default function Navbar({ showApy = true }: { showApy?: boolean }) {
   return (
     <div className="">
       <header className="header">
-        <a href="/" className="logo">
-          <div className="logo-icon">
-            <img src="/images/favicon.svg" alt="BitVault" />
-          </div>
-          <span className="logo-text">BitVault</span>
-        </a>
+        <Link legacyBehavior href="/" passHref>
+          <a className="logo">
+            <div className="logo-icon">
+              <img src="/images/favicon.svg" alt="BitVault" />
+            </div>
+            <span className="logo-text">BitVault</span>
+          </a>
+        </Link>
 
         <nav className="nav-links">
-          <a href="https://docs.bitvault.finance/" target="_blank" rel="noopener noreferrer" className="nav-link">Docs</a>
-          <a href="/blog" className="nav-link">Blog</a>
-          <a href="/media" className="nav-link">Media</a>
-          <a href="/bitvaultreferrals.html" className="nav-link">Rewards</a>
-          <a href="https://t.me/bitvaultfinance" target="_blank" rel="noopener noreferrer" className="nav-link">Community</a>
+          <Link legacyBehavior href="https://docs.bitvault.finance/" passHref>
+            <a target="_blank" rel="noopener noreferrer" className="nav-link">Docs</a>
+          </Link>
+          <Link legacyBehavior href="/blog" passHref>
+            <a className="nav-link">Blog</a>
+          </Link>
+          <Link legacyBehavior href="/media" passHref>
+            <a className="nav-link">Media</a>
+          </Link>
+          <Link legacyBehavior href="/bitvaultreferrals.html" passHref>
+            <a className="nav-link">Rewards</a>
+          </Link>
+          <Link legacyBehavior href="https://t.me/bitvaultfinance" passHref>
+            <a target="_blank" rel="noopener noreferrer" className="nav-link">Community</a>
+          </Link>
         </nav>
 
         <div className="nav-spacer"></div>
@@ -75,11 +80,21 @@ export default function Navbar({ showApy = true }: { showApy?: boolean }) {
 
       {/* Mobile Navigation Overlay */}
       <nav ref={mobileNavRef} className="mobile-nav" id="mobileNav">
-        <a href="https://docs.bitvault.finance/" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={toggleMobileMenu}>Docs</a>
-        <a href="/blog" className="nav-link" onClick={toggleMobileMenu}>Blog</a>
-        <a href="/media" className="nav-link" onClick={toggleMobileMenu}>Media</a>
-        <a href="/bitvaultreferrals.html" className="nav-link" onClick={toggleMobileMenu}>Rewards</a>
-        <a href="https://t.me/bitvaultfinance" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={toggleMobileMenu}>Community</a>
+        <Link legacyBehavior href="https://docs.bitvault.finance/" passHref>
+          <a target="_blank" rel="noopener noreferrer" className="nav-link" onClick={toggleMobileMenu}>Docs</a>
+        </Link>
+        <Link legacyBehavior href="/blog" passHref>
+          <a className="nav-link" onClick={toggleMobileMenu}>Blog</a>
+        </Link>
+        <Link legacyBehavior href="/media" passHref>
+          <a className="nav-link" onClick={toggleMobileMenu}>Media</a>
+        </Link>
+        <Link legacyBehavior href="/bitvaultreferrals.html" passHref>
+          <a className="nav-link" onClick={toggleMobileMenu}>Rewards</a>
+        </Link>
+        <Link legacyBehavior href="https://t.me/bitvaultfinance" passHref>
+          <a target="_blank" rel="noopener noreferrer" className="nav-link" onClick={toggleMobileMenu}>Community</a>
+        </Link>
       </nav>
     </div>
   );
