@@ -3,14 +3,8 @@ import Navbar from "@/components/common/Navbar";
 import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
-import NewFooter from "@/components/common/Footer";
 import Head from "next/head";
 import Footer from "@/components/common/Footer";
-
-const khTeka = localFont({
-  src: "../public/KH_Teka/KHTeka-Regular.woff",
-  variable: "--font-kh-teka",
-});
 
 export default function MediaPage() {
   return (
@@ -44,14 +38,9 @@ export default function MediaPage() {
       <div className="hero-bg">
         <div
           className="min-h-svh w-full grid grid-rows-[auto_1fr]"
-          style={{
-            background:
-              "linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('/images/background.png') no-repeat center/cover",
-            backgroundAttachment: "fixed",
-          }}
         >
           <Navbar />
-          <main className="flex items-center justify-center px-4 mb-36">
+          <main className="flex items-center justify-center px-4 mb-36 container">
             <div className="w-full max-w-[1200px] flex flex-col items-center">
               <h1 className="text-3xl tracking-tight mt-20 mb-4 text-white sm:text-[48px]">
                 Media Kit

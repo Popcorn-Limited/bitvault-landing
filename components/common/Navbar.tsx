@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 
 
 export default function Navbar() {
@@ -68,7 +68,14 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        <div className="nav-spacer"></div>
+        <div className="header-buttons">
+          <a href="https://t.me/bitvaultfinance" target="_blank" className="btn btn-secondary btn-header btn-contact">
+            <span className="btn-text">Contact Us</span>
+          </a>
+          <a href="https://app.bitvault.finance/" className="btn btn-primary btn-header">
+            <span className="btn-text">Launch App</span>
+          </a>
+        </div>
 
         {/* Mobile Menu Button */}
         <button ref={menuBtnRef} className="mobile-menu-btn" aria-label="Toggle menu" onClick={toggleMobileMenu}>
