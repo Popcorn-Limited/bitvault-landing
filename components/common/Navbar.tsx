@@ -90,9 +90,6 @@ export default function Navbar() {
         <Link legacyBehavior href="/blog" passHref>
           <a className="nav-link" onClick={toggleMobileMenu}>Blog</a>
         </Link>
-        <Link legacyBehavior href="/media" passHref>
-          <a className="nav-link" onClick={toggleMobileMenu}>Media</a>
-        </Link>
         <Link legacyBehavior href="/bitvaultreferrals.html" passHref>
           <a className="nav-link" onClick={toggleMobileMenu}>Rewards</a>
         </Link>
