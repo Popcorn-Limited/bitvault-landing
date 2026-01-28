@@ -75,13 +75,13 @@ const IndexPage = () => {
 
   function openNewsletterModal() {
     const modal = document.getElementById('newsletterModal');
-    modal.classList.add('active');
+    modal?.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeNewsletterModal() {
     const modal = document.getElementById('newsletterModal');
-    modal.classList.remove('active');
+    modal?.classList.remove('active');
     document.body.style.overflow = '';
   }
 
