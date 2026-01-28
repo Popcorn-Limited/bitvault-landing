@@ -48,9 +48,9 @@ export default function Navbar() {
           <Link legacyBehavior href="/blog" passHref>
             <a className="nav-link">Blog</a>
           </Link>
-          <Link legacyBehavior href="/bitvaultreferrals.html" passHref>
+          {/* <Link legacyBehavior href="/bitvaultreferrals.html" passHref>
             <a className="nav-link">Rewards</a>
-          </Link>
+          </Link> */}
           <Link legacyBehavior href="https://t.me/bitvaultfinance" passHref>
             <a target="_blank" rel="noopener noreferrer" className="nav-link">Community</a>
           </Link>
@@ -90,9 +90,9 @@ export default function Navbar() {
         <Link legacyBehavior href="/blog" passHref>
           <a className="nav-link" onClick={toggleMobileMenu}>Blog</a>
         </Link>
-        <Link legacyBehavior href="/bitvaultreferrals.html" passHref>
+        {/* <Link legacyBehavior href="/bitvaultreferrals.html" passHref>
           <a className="nav-link" onClick={toggleMobileMenu}>Rewards</a>
-        </Link>
+        </Link> */}
         <Link legacyBehavior href="https://t.me/bitvaultfinance" passHref>
           <a target="_blank" className="nav-link" onClick={toggleMobileMenu}>Community</a>
         </Link>
