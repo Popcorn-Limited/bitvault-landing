@@ -25,7 +25,7 @@ export default function BlogPost() {
                 <span className="article-date">January 27, 2028</span>
               </div>
 
-              <h1 className="article-title">Inside BitVault's Bitcoin Analytics Platform: A Quantitative Approach to BTC Signals</h1>
+              <h1 className="article-title">Inside BitVault&apos;s Bitcoin Analytics Platform: A Quantitative Approach to BTC Signals</h1>
               <p className="article-subtitle">How we built a Wild Bootstrap OLS regression model with 59% directional accuracy—and what we learned about separating signal from noise.</p>
             </div>
             <div className="article-content">
@@ -52,13 +52,13 @@ export default function BlogPost() {
 
               <h2>The Problem: Why Most Traders Lose</h2>
 
-              <p>Here's a statistic that should make you uncomfortable: over 70% of retail traders lose money. Not because markets are rigged or because they lack intelligence, but because they trade on noise disguised as signal.</p>
+              <p>Here&apos;s a statistic that should make you uncomfortable: over 70% of retail traders lose money. Not because markets are rigged or because they lack intelligence, but because they trade on noise disguised as signal.</p>
 
-              <p>The crypto market is particularly brutal. Telegram alpha, Twitter threads promising 100x returns, YouTube analysts drawing meaningless lines on charts—it's an ecosystem designed to extract capital from those who confuse activity with insight.</p>
+              <p>The crypto market is particularly brutal. Telegram alpha, Twitter threads promising 100x returns, YouTube analysts drawing meaningless lines on charts—it&apos;s an ecosystem designed to extract capital from those who confuse activity with insight.</p>
 
-              <p>At BitVault, we asked a simple question: <strong>What actually predicts Bitcoin's next-day returns?</strong> Not what sounds good. Not what confirms our biases. What the data actually shows.</p>
+              <p>At BitVault, we asked a simple question: <strong>What actually predicts Bitcoin&apos;s next-day returns?</strong> Not what sounds good. Not what confirms our biases. What the data actually shows.</p>
 
-              <p>The answer required building something we hadn't seen anywhere else: a quantitative analytics platform that applies PhD-level econometric rigor to daily Bitcoin signals. Today, we're pulling back the curtain on how it works.</p>
+              <p>The answer required building something we hadn&apos;t seen anywhere else: a quantitative analytics platform that applies PhD-level econometric rigor to daily Bitcoin signals. Today, we&apos;re pulling back the curtain on how it works.</p>
 
               <div className="image-placeholder">
                 <svg className="image-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -68,19 +68,19 @@ export default function BlogPost() {
                 </svg>
                 <div className="image-placeholder-text">[IMAGE: Dashboard overview showing the main signal display with current BTC price, signal strength meter, and category breakdown]</div>
               </div>
-              <p className="image-caption">The BitVault Analytics Dashboard displays today's signal alongside the contributing factor weights.</p>
+              <p className="image-caption">The BitVault Analytics Dashboard displays today&apos;s signal alongside the contributing factor weights.</p>
 
               <h2>What This Tool Does</h2>
 
               <p>Every day, our system ingests data from dozens of sources—ETF flows, fear &amp; greed indices, technical indicators, macroeconomic data, derivatives markets, and more. It processes this through a Wild Bootstrap OLS regression model (version 3.4.0) and outputs a single number: a directional signal for Bitcoin.</p>
 
-              <p>The signal ranges from strongly bearish to strongly bullish, with intermediate gradations. But here's what matters: over nearly 2,100 observations spanning April 2020 to December 2025, <strong>the model correctly predicted the direction of Bitcoin's next-day move 59.2% of the time.</strong></p>
+              <p>The signal ranges from strongly bearish to strongly bullish, with intermediate gradations. But here&apos;s what matters: over nearly 2,100 observations spanning April 2020 to December 2025, <strong>the model correctly predicted the direction of Bitcoin&apos;s next-day move 59.2% of the time.</strong></p>
 
-              <p>That might not sound impressive to those expecting a crystal ball. But consider this: in financial markets, consistent edge—even small edge—compounds dramatically over time. A coin flip gives you 50%. We're operating at 59%+, with statistical significance that makes the result highly unlikely to be random chance (F-statistic of 13.36, p-value &lt; 0.0001).</p>
+              <p>That might not sound impressive to those expecting a crystal ball. But consider this: in financial markets, consistent edge—even small edge—compounds dramatically over time. A coin flip gives you 50%. We&apos;re operating at 59%+, with statistical significance that makes the result highly unlikely to be random chance (F-statistic of 13.36, p-value &lt; 0.0001).</p>
 
               <h2>Performance: What the Data Shows</h2>
 
-              <p>Let's be transparent about what this model actually delivers. Here are the real numbers from our out-of-sample testing:</p>
+              <p>Let&apos;s be transparent about what this model actually delivers. Here are the real numbers from our out-of-sample testing:</p>
 
               <div className="stat-box">
                 <div className="stat-grid">
@@ -103,11 +103,11 @@ export default function BlogPost() {
                 </div>
               </div>
 
-              <p>The R² numbers deserve explanation. An R² of 10.8% means our model explains about 11% of the variance in Bitcoin's daily returns. That sounds low until you realize that predicting asset returns is extraordinarily difficult—most academic models struggle to explain even 5% of daily return variance. The remaining 89% is noise, and we're not pretending otherwise.</p>
+              <p>The R² numbers deserve explanation. An R² of 10.8% means our model explains about 11% of the variance in Bitcoin&apos;s daily returns. That sounds low until you realize that predicting asset returns is extraordinarily difficult—most academic models struggle to explain even 5% of daily return variance. The remaining 89% is noise, and we&apos;re not pretending otherwise.</p>
 
               <h3>Performance Across Market Regimes</h3>
 
-              <p>What's particularly encouraging is how the model performs across different market conditions:</p>
+              <p>What&apos;s particularly encouraging is how the model performs across different market conditions:</p>
 
               <div className="data-table-container">
                 <table className="data-table">
@@ -173,11 +173,11 @@ export default function BlogPost() {
 
               <h2>The Methodology: Wild Bootstrap OLS Explained</h2>
 
-              <p>For the quants in the room, here's how the sausage is made. For everyone else, I'll explain why each piece matters.</p>
+              <p>For the quants in the room, here&apos;s how the sausage is made. For everyone else, I&apos;ll explain why each piece matters.</p>
 
               <h3>Why OLS Regression?</h3>
 
-              <p>Ordinary Least Squares (OLS) regression is the workhorse of econometrics. It finds the linear relationship between our input variables (technical indicators, sentiment, etc.) and our output variable (Bitcoin's next-day return). The "ordinary" refers to minimizing squared errors—the model finds coefficients that minimize the total squared distance between predicted and actual values.</p>
+              <p>Ordinary Least Squares (OLS) regression is the workhorse of econometrics. It finds the linear relationship between our input variables (technical indicators, sentiment, etc.) and our output variable (Bitcoin&apos;s next-day return). The &quot;ordinary&quot; refers to minimizing squared errors—the model finds coefficients that minimize the total squared distance between predicted and actual values.</p>
 
               <p>We chose OLS over fancier machine learning approaches for two reasons:</p>
               <ol>
@@ -187,12 +187,12 @@ export default function BlogPost() {
 
               <h3>Why Wild Bootstrap?</h3>
 
-              <p>Here's where it gets interesting. Standard OLS assumes that error terms are "well-behaved"—normally distributed with constant variance. Financial data laughs at these assumptions. Bitcoin returns are fat-tailed, heteroskedastic (variance changes over time), and autocorrelated.</p>
+              <p>Here&apos;s where it gets interesting. Standard OLS assumes that error terms are &quot;well-behaved&quot;—normally distributed with constant variance. Financial data laughs at these assumptions. Bitcoin returns are fat-tailed, heteroskedastic (variance changes over time), and autocorrelated.</p>
 
-              <p>The Wild Bootstrap is a simulation technique that doesn't require these assumptions. Instead of relying on theoretical distributions, we:</p>
+              <p>The Wild Bootstrap is a simulation technique that doesn&apos;t require these assumptions. Instead of relying on theoretical distributions, we:</p>
               <ol>
                 <li>Run the regression and save the residuals (prediction errors)</li>
-                <li>Randomly flip the signs of these residuals (the "wild" part)</li>
+                <li>Randomly flip the signs of these residuals (the &quot;wild&quot; part)</li>
                 <li>Reconstruct new pseudo-samples and re-estimate coefficients</li>
                 <li>Repeat 40,000 times</li>
               </ol>
@@ -201,24 +201,24 @@ export default function BlogPost() {
 
               <h3>Why 40,000 Iterations?</h3>
 
-              <p>More iterations mean more stable confidence intervals. At 40,000 bootstraps with 5-fold cross-validation, we're confident that our significance estimates aren't artifacts of random sampling. The computational cost is worth the statistical rigor.</p>
+              <p>More iterations mean more stable confidence intervals. At 40,000 bootstraps with 5-fold cross-validation, we&apos;re confident that our significance estimates aren&apos;t artifacts of random sampling. The computational cost is worth the statistical rigor.</p>
 
               <h3>HAC Standard Errors</h3>
 
-              <p>We use Heteroskedasticity and Autocorrelation Consistent (HAC) standard errors—specifically, the Newey-West estimator. This corrects for the fact that today's Bitcoin return is correlated with yesterday's, and that volatility clusters (calm periods and volatile periods tend to persist).</p>
+              <p>We use Heteroskedasticity and Autocorrelation Consistent (HAC) standard errors—specifically, the Newey-West estimator. This corrects for the fact that today&apos;s Bitcoin return is correlated with yesterday&apos;s, and that volatility clusters (calm periods and volatile periods tend to persist).</p>
 
-              <p>Without HAC correction, we'd underestimate the true uncertainty in our coefficients, leading to false confidence in spurious predictors.</p>
+              <p>Without HAC correction, we&apos;d underestimate the true uncertainty in our coefficients, leading to false confidence in spurious predictors.</p>
 
               <h2>The Categories: What Actually Predicts Bitcoin</h2>
 
-              <p>After running 40,000 bootstrap iterations across 2,092 daily observations, here's what we found. The results might surprise you.</p>
+              <p>After running 40,000 bootstrap iterations across 2,092 daily observations, here&apos;s what we found. The results might surprise you.</p>
 
               <div className="image-placeholder">
                 <svg className="image-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                   <rect x="3" y="3" width="18" height="18" rx="2"></rect>
                   <path d="M7 12h10M7 8h10M7 16h6"></path>
                 </svg>
-                <div className="image-placeholder-text">[IMAGE: Category weights visualization from the dashboard showing bars or gauges for each factor's contribution]</div>
+                <div className="image-placeholder-text">[IMAGE: Category weights visualization from the dashboard showing bars or gauges for each factor&apos;s contribution]</div>
               </div>
               <p className="image-caption">Factor weights as displayed in the dashboard interface.</p>
 
@@ -324,9 +324,9 @@ export default function BlogPost() {
 
               <h3>High Conviction Signals (100% Significance)</h3>
 
-              <p><strong>Technical (Weight: 2.68, t=13.34):</strong> This is the model's strongest signal by far. It incorporates 20/50-day momentum crossovers, distance from the 200-day moving average, and RSI readings. The t-statistic of 13.34 means there's essentially zero probability this relationship is due to chance. Technical analysis works—when done quantitatively.</p>
+              <p><strong>Technical (Weight: 2.68, t=13.34):</strong> This is the model&apos;s strongest signal by far. It incorporates 20/50-day momentum crossovers, distance from the 200-day moving average, and RSI readings. The t-statistic of 13.34 means there&apos;s essentially zero probability this relationship is due to chance. Technical analysis works—when done quantitatively.</p>
 
-              <p><strong>Sentiment (Weight: 1.64, t=9.23):</strong> The Fear &amp; Greed Index operates as a contrarian indicator. When sentiment is extremely fearful (readings below 25), the model becomes more bullish. When greed is extreme, it becomes cautious. This isn't novel—but the statistical significance confirms what experienced traders intuit.</p>
+              <p><strong>Sentiment (Weight: 1.64, t=9.23):</strong> The Fear &amp; Greed Index operates as a contrarian indicator. When sentiment is extremely fearful (readings below 25), the model becomes more bullish. When greed is extreme, it becomes cautious. This isn&apos;t novel—but the statistical significance confirms what experienced traders intuit.</p>
 
               <p><strong>Tail Risk (Weight: 0.82, t=-3.23):</strong> New in version 3.4. This is a composite proxy for VIX and MOVE index readings—measuring equity and bond market volatility. The negative coefficient means that elevated tail risk (potential for large moves) is predictive of negative BTC returns. When traditional markets are stressed, Bitcoin tends to sell off.</p>
 
@@ -345,19 +345,19 @@ export default function BlogPost() {
 
               <h3>Moderate Signals (Not Statistically Significant)</h3>
 
-              <p><strong>Flow (Weight: 0.19, 88.5% significance):</strong> ETF flows matter, but less than you'd think. The relationship is noisy and doesn't meet our 95% significance threshold. Large inflows don't reliably predict next-day positive returns.</p>
+              <p><strong>Flow (Weight: 0.19, 88.5% significance):</strong> ETF flows matter, but less than you&apos;d think. The relationship is noisy and doesn&apos;t meet our 95% significance threshold. Large inflows don&apos;t reliably predict next-day positive returns.</p>
 
-              <p><strong>Macro (Weight: 0.08, 83.0% significance):</strong> DXY (dollar strength) has a weak relationship with Bitcoin returns at daily frequencies. This might strengthen at longer time horizons, but for day-to-day signals, it's marginal.</p>
+              <p><strong>Macro (Weight: 0.08, 83.0% significance):</strong> DXY (dollar strength) has a weak relationship with Bitcoin returns at daily frequencies. This might strengthen at longer time horizons, but for day-to-day signals, it&apos;s marginal.</p>
 
               <p><strong>Google Trends (Weight: 0.03, 82.2% significance):</strong> Retail attention as measured by search interest provides minimal predictive value. By the time something is trending on Google, the move has usually happened.</p>
 
               <h3>The Noise (Statistically Insignificant)</h3>
 
-              <p><strong>Supply-Side (Weight: 0.01, t=0.18):</strong> Hashrate, miner flows, and supply metrics have effectively zero predictive power for next-day returns. This contradicts popular narratives about "miner capitulation signals."</p>
+              <p><strong>Supply-Side (Weight: 0.01, t=0.18):</strong> Hashrate, miner flows, and supply metrics have effectively zero predictive power for next-day returns. This contradicts popular narratives about &quot;miner capitulation signals.&quot;</p>
 
               <p><strong>Derivatives (Weight: 0.01, t=-0.15):</strong> Funding rates and open interest—the bread and butter of crypto Twitter analysis—show no statistically significant relationship with next-day returns. The t-statistic of -0.15 is essentially zero.</p>
 
-              <p>This is the intellectual honesty part. Popular indicators that drive thousands of trading decisions every day simply don't show predictive power when tested rigorously. We include them in the model with near-zero weights to maintain completeness, but the data is clear: they're noise.</p>
+              <p>This is the intellectual honesty part. Popular indicators that drive thousands of trading decisions every day simply don&apos;t show predictive power when tested rigorously. We include them in the model with near-zero weights to maintain completeness, but the data is clear: they&apos;re noise.</p>
 
               <div className="image-placeholder">
                 <svg className="image-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -369,15 +369,15 @@ export default function BlogPost() {
               </div>
               <p className="image-caption">Recent signal history with outcomes—showing both wins and losses for transparency.</p>
 
-              <h2>What's New in v3.4: Crisis Defense</h2>
+              <h2>What&apos;s New in v3.4: Crisis Defense</h2>
 
               <p>Version 3.4 added two categories specifically designed to improve performance during market stress:</p>
 
-              <p><strong>Tail Risk</strong> uses a proprietary composite of volatility indicators to detect when markets are pricing in extreme moves. During our backtest period, the model identified 17 "crisis" days and 73 "high stress" days out of 2,184 total observations. During these periods, the Tail Risk factor's negative coefficient helps the model turn cautious.</p>
+              <p><strong>Tail Risk</strong> uses a proprietary composite of volatility indicators to detect when markets are pricing in extreme moves. During our backtest period, the model identified 17 &quot;crisis&quot; days and 73 &quot;high stress&quot; days out of 2,184 total observations. During these periods, the Tail Risk factor&apos;s negative coefficient helps the model turn cautious.</p>
 
-              <p><strong>Geopolitical Risk</strong> captures events that don't show up in traditional financial indicators—wars, sanctions, political instability. The GPR proxy we constructed correlates with periods where Bitcoin's behavior deviates from its normal relationship with equities.</p>
+              <p><strong>Geopolitical Risk</strong> captures events that don&apos;t show up in traditional financial indicators—wars, sanctions, political instability. The GPR proxy we constructed correlates with periods where Bitcoin&apos;s behavior deviates from its normal relationship with equities.</p>
 
-              <p>Together, these factors function as a "crisis defense" mechanism. When both are flashing warning signs, the model significantly reduces its bullish bias regardless of what technical and sentiment indicators suggest.</p>
+              <p>Together, these factors function as a &quot;crisis defense&quot; mechanism. When both are flashing warning signs, the model significantly reduces its bullish bias regardless of what technical and sentiment indicators suggest.</p>
 
               <h2>How to Interpret the Weights</h2>
 
@@ -412,16 +412,16 @@ export default function BlogPost() {
                 <ul>
                   <li><strong>This is experimental.</strong> The model is under active development and is used for internal research only.</li>
                   <li><strong>Not financial advice.</strong> Nothing here constitutes a recommendation to buy or sell any asset.</li>
-                  <li><strong>Past performance doesn't guarantee future results.</strong> Market regimes change. Relationships that held from 2020-2025 may not persist.</li>
-                  <li><strong>Overfitting risk.</strong> Despite our cross-validation, there's always risk that we've fit to historical noise that won't repeat.</li>
+                  <li><strong>Past performance doesn&apos;t guarantee future results.</strong> Market regimes change. Relationships that held from 2020-2025 may not persist.</li>
+                  <li><strong>Overfitting risk.</strong> Despite our cross-validation, there&apos;s always risk that we&apos;ve fit to historical noise that won&apos;t repeat.</li>
                   <li><strong>59% is not 100%.</strong> The model is wrong 41% of the time. Position sizing and risk management matter more than any signal.</li>
                   <li><strong>Black swan events.</strong> No quantitative model can predict genuinely unprecedented events.</li>
                 </ul>
               </div>
 
-              <p>The model's Durbin-Watson statistic of 1.82 suggests acceptable but not perfect autocorrelation handling. The Breusch-Pagan test confirms heteroskedasticity (which we address with HAC standard errors, but imperfectly). And our out-of-sample R² of 0.64% means the vast majority of daily return variance remains unexplained.</p>
+              <p>The model&apos;s Durbin-Watson statistic of 1.82 suggests acceptable but not perfect autocorrelation handling. The Breusch-Pagan test confirms heteroskedasticity (which we address with HAC standard errors, but imperfectly). And our out-of-sample R² of 0.64% means the vast majority of daily return variance remains unexplained.</p>
 
-              <p>We're not claiming to have solved Bitcoin prediction. We're claiming to have identified a handful of factors with statistically significant—if modest—predictive power, and to have quantified exactly how significant (and insignificant) each factor is.</p>
+              <p>We&apos;re not claiming to have solved Bitcoin prediction. We&apos;re claiming to have identified a handful of factors with statistically significant—if modest—predictive power, and to have quantified exactly how significant (and insignificant) each factor is.</p>
 
               <hr />
 

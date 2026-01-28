@@ -27,7 +27,7 @@ export default function BlogPost() {
               </div>
 
               <h1 className="article-title">From 59% to 72%: How We Rebuilt Our Bitcoin Signal Model</h1>
-              <p className="article-subtitle">Walk-forward validation revealed uncomfortable truths about our model. Two classifiers were performing worse than a coin flip. Here's how we fixed it.</p>
+              <p className="article-subtitle">Walk-forward validation revealed uncomfortable truths about our model. Two classifiers were performing worse than a coin flip. Here&apos;s how we fixed it.</p>
             </div>
 
             <div className="article-content">
@@ -67,7 +67,7 @@ export default function BlogPost() {
                 <p>Two of our six classifiers were performing <strong>worse than a coin flip</strong>. The Weekend Effect classifier, which we believed had 72% accuracy based on in-sample testing, actually achieved only 29.9% in live conditions. The Tail Risk classifier managed 39.1%.</p>
               </div>
 
-              <p>These weren't minor underperformers. These were classifiers actively hurting our signal by voting in the wrong direction more often than not. Every time they cast a vote, they were more likely to be wrong than right.</p>
+              <p>These weren&apos;t minor underperformers. These were classifiers actively hurting our signal by voting in the wrong direction more often than not. Every time they cast a vote, they were more likely to be wrong than right.</p>
 
               <h2>Why Did This Happen?</h2>
 
@@ -75,7 +75,7 @@ export default function BlogPost() {
 
               <p>When we built v3.4.0, we validated using traditional cross-validation: randomly split the data, train on some, test on others, aggregate results. This approach has a fatal flaw for time-series data: it leaks future information into the training process.</p>
 
-              <p>The Weekend Effect pattern, for example, appeared highly significant when we could "see" both Friday and the subsequent Monday in our training data. But in real trading, you only know Friday's close. You don't know what Monday will bring. The pattern that seemed crystal clear in hindsight became noise in real-time.</p>
+              <p>The Weekend Effect pattern, for example, appeared highly significant when we could &quot;see&quot; both Friday and the subsequent Monday in our training data. But in real trading, you only know Friday&apos;s close. You don&apos;t know what Monday will bring. The pattern that seemed crystal clear in hindsight became noise in real-time.</p>
 
               <h3>The Classifiers That Failed</h3>
 
@@ -116,11 +116,11 @@ export default function BlogPost() {
                 </table>
               </div>
 
-              <p>The Weekend Effect classifier was our worst offender. A 29.9% accuracy means it was wrong 70% of the time. If we had simply inverted its signal, we would have achieved 70% accuracy from that classifier alone. But that would be curve-fitting. The honest conclusion: the pattern doesn't work in live trading.</p>
+              <p>The Weekend Effect classifier was our worst offender. A 29.9% accuracy means it was wrong 70% of the time. If we had simply inverted its signal, we would have achieved 70% accuracy from that classifier alone. But that would be curve-fitting. The honest conclusion: the pattern doesn&apos;t work in live trading.</p>
 
               <h2>The Solution: Two-Stage Prediction + Calibration</h2>
 
-              <p>We didn't just disable the failing classifiers and call it a day. We rebuilt the model architecture from scratch, implementing two major innovations:</p>
+              <p>We didn&apos;t just disable the failing classifiers and call it a day. We rebuilt the model architecture from scratch, implementing two major innovations:</p>
 
               <div className="improvement-grid">
                 <div className="improvement-card highlight">
@@ -130,7 +130,7 @@ export default function BlogPost() {
                 </div>
                 <div className="improvement-card highlight">
                   <h4>2. Calibrated Weights</h4>
-                  <p>Instead of using theoretical weights from in-sample analysis, we calibrated each classifier's weight based on its actual walk-forward performance.</p>
+                  <p>Instead of using theoretical weights from in-sample analysis, we calibrated each classifier&apos;s weight based on its actual walk-forward performance.</p>
                   <p style={{ marginTop: "12px" }}>High performers (64%+ accuracy) got boosted. Near-random performers (50%) got reduced. Below-random performers got disabled.</p>
                 </div>
                 <div className="improvement-card">
@@ -139,13 +139,13 @@ export default function BlogPost() {
                 </div>
                 <div className="improvement-card">
                   <h4>4. Live Monitoring</h4>
-                  <p>The model now tracks its own performance in real-time. If accuracy drops below thresholds, automated alerts fire. We'll know immediately if the model starts degrading.</p>
+                  <p>The model now tracks its own performance in real-time. If accuracy drops below thresholds, automated alerts fire. We&apos;ll know immediately if the model starts degrading.</p>
                 </div>
               </div>
 
               <h2>The New Classifier Weights</h2>
 
-              <p>After calibration, here's how the weights changed:</p>
+              <p>After calibration, here&apos;s how the weights changed:</p>
 
               <div className="data-table-container">
                 <table className="data-table">
@@ -244,28 +244,28 @@ export default function BlogPost() {
 
               <h2>Why This Should Work Better</h2>
 
-              <p>The improvements in v3.5.1 aren't based on finding new alpha. They're based on <strong>removing sources of negative alpha</strong> and <strong>concentrating weight on what actually works</strong>.</p>
+              <p>The improvements in v3.5.1 aren&apos;t based on finding new alpha. They&apos;re based on <strong>removing sources of negative alpha</strong> and <strong>concentrating weight on what actually works</strong>.</p>
 
               <div className="callout success">
                 <div className="callout-title">The Key Insight</div>
-                <p>A model that correctly identifies and removes broken components will outperform a model that averages across both working and broken components. We didn't make the good classifiers better—we stopped letting the bad ones vote.</p>
+                <p>A model that correctly identifies and removes broken components will outperform a model that averages across both working and broken components. We didn&apos;t make the good classifiers better—we stopped letting the bad ones vote.</p>
               </div>
 
-              <p>The 71.9% accuracy isn't a theoretical number from in-sample testing. It's the actual hit rate from walk-forward validation across 230+ trades spanning multiple market regimes. The model predicted the direction correctly 166 times out of 230.</p>
+              <p>The 71.9% accuracy isn&apos;t a theoretical number from in-sample testing. It&apos;s the actual hit rate from walk-forward validation across 230+ trades spanning multiple market regimes. The model predicted the direction correctly 166 times out of 230.</p>
 
-              <h2>What We're Monitoring</h2>
+              <h2>What We&apos;re Monitoring</h2>
 
               <p>V3.5.1 includes a live monitoring system that tracks:</p>
 
               <ul>
                 <li><strong>7-day rolling accuracy</strong> — Alert if drops below 55%</li>
-                <li><strong>Classifier drift</strong> — Alert if any classifier's accuracy shifts 15%+ from baseline</li>
+                <li><strong>Classifier drift</strong> — Alert if any classifier&apos;s accuracy shifts 15%+ from baseline</li>
                 <li><strong>Losing streaks</strong> — Alert after 5 consecutive incorrect predictions</li>
-                <li><strong>Calibration error</strong> — Alert if predicted confidence doesn't match actual win rate</li>
+                <li><strong>Calibration error</strong> — Alert if predicted confidence doesn&apos;t match actual win rate</li>
                 <li><strong>Regime-specific degradation</strong> — Alert if performance drops in specific market conditions</li>
               </ul>
 
-              <p>If the model starts failing, we'll know within days, not months. This is the difference between quantitative trading and blind faith.</p>
+              <p>If the model starts failing, we&apos;ll know within days, not months. This is the difference between quantitative trading and blind faith.</p>
 
               <h2>Explore the Updated Platform</h2>
 
@@ -284,7 +284,7 @@ export default function BlogPost() {
 
               <div className="cta-section">
                 <h3>Try the New Model</h3>
-                <p>See how v3.5.1's two-stage prediction compares to the original. The model health badge in the header shows real-time accuracy.</p>
+                <p>See how v3.5.1&apos;s two-stage prediction compares to the original. The model health badge in the header shows real-time accuracy.</p>
                 <div className="cta-buttons">
                   <a href="/bitvault2" className="btn btn-primary">
                     Launch BitVault v2
@@ -303,14 +303,14 @@ export default function BlogPost() {
 
               <ol>
                 <li><strong>In-sample results lie.</strong> A pattern that looks perfect in backtesting may not survive contact with reality. Always use walk-forward validation.</li>
-                <li><strong>Popular indicators can be noise.</strong> The Weekend Effect and derivatives data (funding rates, open interest) showed zero or negative predictive power. Don't trade on narratives—trade on validated signals.</li>
+                <li><strong>Popular indicators can be noise.</strong> The Weekend Effect and derivatives data (funding rates, open interest) showed zero or negative predictive power. Don&apos;t trade on narratives—trade on validated signals.</li>
                 <li><strong>Subtraction beats addition.</strong> Removing two broken classifiers improved accuracy more than any single new feature could have.</li>
                 <li><strong>Monitor relentlessly.</strong> Markets change. Patterns decay. A model that works today may fail tomorrow. Build monitoring from day one.</li>
               </ol>
 
-              <p>The 71.9% accuracy in v3.5.1 isn't the end of this journey. It's a checkpoint. We'll continue validating, calibrating, and improving. When the model starts degrading—and it will eventually—we'll catch it early and adapt.</p>
+              <p>The 71.9% accuracy in v3.5.1 isn&apos;t the end of this journey. It&apos;s a checkpoint. We&apos;ll continue validating, calibrating, and improving. When the model starts degrading—and it will eventually—we&apos;ll catch it early and adapt.</p>
 
-              <p>That's the difference between quantitative trading and gambling.</p>
+              <p>That&apos;s the difference between quantitative trading and gambling.</p>
 
               <hr />
 
