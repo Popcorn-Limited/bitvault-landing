@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
+import Script from "next/script";
 
 const IndexPage = () => {
   const typedTextRef = useRef<HTMLSpanElement>(null);
@@ -38,7 +39,7 @@ const IndexPage = () => {
       let html = "";
       for (let i = 0; i < text.length; i++) {
         const delay = i * 0.1;
-        html += `<span class="odometer-digit" style="animation-delay: ${delay}s">${text[i]}</span>`;
+        html += `<span className="odometer-digit" style="animation-delay: ${delay}s">${text[i]}</span>`;
       }
       el.innerHTML = html;
       el.classList.add("odometer");
@@ -72,6 +73,18 @@ const IndexPage = () => {
     document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  function openNewsletterModal() {
+    const modal = document.getElementById('newsletterModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNewsletterModal() {
+    const modal = document.getElementById('newsletterModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
   return (
     <>
       <Head>
@@ -98,6 +111,65 @@ const IndexPage = () => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
+
+      <Script
+        id="sender-widget"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+      (function (s, e, n, d, er) {
+        s['Sender'] = er;
+        s[er] = s[er] || function () {
+          (s[er].q = s[er].q || []).push(arguments);
+        }, s[er].l = 1 * new Date();
+        var a = e.createElement(n),
+            m = e.getElementsByTagName(n)[0];
+        a.async = 1;
+        a.src = d;
+        m.parentNode.insertBefore(a, m);
+      })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+      sender('d16a605c816689');
+    `,
+        }}
+      />
+
+      <div className="newsletter-modal active" id="newsletterModal">
+        <div className="newsletter-modal-content">
+          <button className="newsletter-modal-close" onClick={closeNewsletterModal} aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <button className="newsletter-modal-back" onClick={closeNewsletterModal} aria-label="Go back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5"></path>
+              <path d="M12 19l-7-7 7-7"></path>
+            </svg>
+            <span>Back</span>
+          </button>
+
+          <div className="newsletter-modal-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+
+          <h3 className="newsletter-modal-title">Get Early Access</h3>
+          <p className="newsletter-modal-subtitle">
+            Be the first to know about the <span className="newsletter-modal-highlight">BitVault TGE</span> and receive exclusive updates on launch, yield strategies, and early access opportunities.
+          </p>
+
+          <div className="newsletter-modal-form">
+            <div className="sender-form-field" data-sender-form-id="bDkl3k"><div style={{ display: "inline-block", position: "relative" }}>
+            </div></div>
+          </div>
+
+          <p className="newsletter-modal-disclaimer">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
 
       {/* Background for iOS compatibility */}
       <div className="page-background" aria-hidden="true"></div>
@@ -161,8 +233,8 @@ const IndexPage = () => {
               </div>
 
               <div className="hero-cta">
-                <button className="btn btn-primary btn-gradient-border">
-                  <span className="btn-text">Launch App</span>
+                <button className="btn btn-primary btn-gradient-border" onClick={openNewsletterModal}>
+                  <span className="btn-text">Get early access</span>
                 </button>
               </div>
             </div>
