@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 export default function Navbar() {
   const mobileNavRef = useRef<HTMLElement>(null);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   // Escape key handler for mobile menu
   useEffect(() => {
@@ -25,17 +26,7 @@ export default function Navbar() {
   }, []);
 
   const toggleMobileMenu = () => {
-    const mobileNav = mobileNavRef.current;
-    const menuBtn = menuBtnRef.current;
-
-    mobileNav?.classList.toggle("active");
-    menuBtn?.classList.toggle("active");
-
-    if (mobileNav?.classList.contains("active")) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    setIsMobileNavOpen(!isMobileNavOpen);
   };
 
   return (
@@ -83,9 +74,18 @@ export default function Navbar() {
       </header>
 
       {/* Mobile Navigation Overlay */}
-      <nav ref={mobileNavRef} className="mobile-nav" id="mobileNav">
+      <nav className={`mobile-nav ${isMobileNavOpen ? "active" : ""}`} id="mobileNav">
+        <button className="mobile-nav-close" onClick={toggleMobileMenu} aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <Link legacyBehavior href="/" passHref>
+          <a className="nav-link" onClick={toggleMobileMenu}>Home</a>
+        </Link>
         <Link legacyBehavior href="https://docs.bitvault.finance/" passHref>
-          <a target="_blank" rel="noopener noreferrer" className="nav-link" onClick={toggleMobileMenu}>Docs</a>
+          <a target="_blank" className="nav-link" onClick={toggleMobileMenu}>Docs</a>
         </Link>
         <Link legacyBehavior href="/blog" passHref>
           <a className="nav-link" onClick={toggleMobileMenu}>Blog</a>
@@ -94,7 +94,7 @@ export default function Navbar() {
           <a className="nav-link" onClick={toggleMobileMenu}>Rewards</a>
         </Link>
         <Link legacyBehavior href="https://t.me/bitvaultfinance" passHref>
-          <a target="_blank" rel="noopener noreferrer" className="nav-link" onClick={toggleMobileMenu}>Community</a>
+          <a target="_blank" className="nav-link" onClick={toggleMobileMenu}>Community</a>
         </Link>
       </nav>
     </div>
