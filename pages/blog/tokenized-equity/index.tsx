@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import type { Chart as ChartType } from "chart.js";
 import Link from "next/link";
 
-export default function TokenizedEquity() {
+export default function BlogPost() {
   const stockChartRef = useRef<HTMLCanvasElement>(null);
   const marketChartRef = useRef<HTMLCanvasElement>(null);
   const stockChartInstance = useRef<ChartType | null>(null);

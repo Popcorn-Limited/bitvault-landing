@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import type { Chart as ChartType } from "chart.js";
 import Link from "next/link";
 
-export default function CentralBankLiquidityDivergence() {
+export default function BlogPost() {
   return (
     <>
       <div className="hero-bg">
