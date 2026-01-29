@@ -2500,7 +2500,7 @@ body {
 
 @media (min-width: 640px) {
   .stat-grid {
-      grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -2876,5 +2876,14 @@ body {
   .cta-buttons .btn {
     width: 100%;
     max-width: 280px;
+  }
+
+  ::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: auto !important;
   }
 }

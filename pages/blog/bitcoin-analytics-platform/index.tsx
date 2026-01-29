@@ -60,14 +60,7 @@ export default function BlogPost() {
 
               <p>The answer required building something we hadn&apos;t seen anywhere else: a quantitative analytics platform that applies PhD-level econometric rigor to daily Bitcoin signals. Today, we&apos;re pulling back the curtain on how it works.</p>
 
-              <div className="image-placeholder">
-                <svg className="image-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                  <path d="M21 15l-5-5L5 21"></path>
-                </svg>
-                <div className="image-placeholder-text">[IMAGE: Dashboard overview showing the main signal display with current BTC price, signal strength meter, and category breakdown]</div>
-              </div>
+              <img src="/images/blog/TodaySignal.png" alt="BitVault Analytics Dashboard showing signal display with BTC price, signal strength meter, and category breakdown" style={{ width: "100%", borderRadius: "var(--radius-lg)", margin: "32px 0 12px" }} />
               <p className="image-caption">The BitVault Analytics Dashboard displays today&apos;s signal alongside the contributing factor weights.</p>
 
               <h2>What This Tool Does</h2>
@@ -162,13 +155,7 @@ export default function BlogPost() {
 
               <p>Notice something interesting: <strong>the model actually performs best during bear markets (64.9% accuracy in 2022).</strong> This makes intuitive sense—during periods of extreme fear, contrarian signals become more reliable. When everyone is panicking, the sentiment indicator gains predictive power.</p>
 
-              <div className="image-placeholder">
-                <svg className="image-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                  <path d="M3 9h18M9 21V9"></path>
-                </svg>
-                <div className="image-placeholder-text">[IMAGE: Historical performance chart showing cumulative accuracy over time with market regime shading (bull/bear/sideways)]</div>
-              </div>
+              <img src="/images/blog/TradeTracker.png" alt="Historical performance chart showing cumulative accuracy over time with market regime shading" style={{ width: "100%", borderRadius: "var(--radius-lg)", margin: "32px 0 12px" }} />
               <p className="image-caption">Model accuracy across different market regimes from 2020-2025.</p>
 
               <h2>The Methodology: Wild Bootstrap OLS Explained</h2>
@@ -213,13 +200,7 @@ export default function BlogPost() {
 
               <p>After running 40,000 bootstrap iterations across 2,092 daily observations, here&apos;s what we found. The results might surprise you.</p>
 
-              <div className="image-placeholder">
-                <svg className="image-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                  <path d="M7 12h10M7 8h10M7 16h6"></path>
-                </svg>
-                <div className="image-placeholder-text">[IMAGE: Category weights visualization from the dashboard showing bars or gauges for each factor&apos;s contribution]</div>
-              </div>
+              <img src="/images/blog/CategoryWeights.png" alt="Category weights visualization showing bars for each factor's contribution" style={{ width: "100%", borderRadius: "var(--radius-lg)", margin: "32px 0 12px" }}/>
               <p className="image-caption">Factor weights as displayed in the dashboard interface.</p>
 
               <div className="data-table-container">
@@ -359,14 +340,7 @@ export default function BlogPost() {
 
               <p>This is the intellectual honesty part. Popular indicators that drive thousands of trading decisions every day simply don&apos;t show predictive power when tested rigorously. We include them in the model with near-zero weights to maintain completeness, but the data is clear: they&apos;re noise.</p>
 
-              <div className="image-placeholder">
-                <svg className="image-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                  <path d="M3 12h18"></path>
-                  <path d="M12 3v18"></path>
-                </svg>
-                <div className="image-placeholder-text">[IMAGE: Recent signals table showing date, signal value, recommendation, and actual outcome (correct/incorrect)]</div>
-              </div>
+              <img src="/images/blog/SignalWeightComposition.png" alt="Recent signals table showing date, signal value, recommendation, and actual outcome" style={{ width: "100%", borderRadius: "var(--radius-lg)", margin: "32px 0 12px" }} />
               <p className="image-caption">Recent signal history with outcomes—showing both wins and losses for transparency.</p>
 
               <h2>What&apos;s New in v3.4: Crisis Defense</h2>
@@ -422,18 +396,6 @@ export default function BlogPost() {
               <p>The model&apos;s Durbin-Watson statistic of 1.82 suggests acceptable but not perfect autocorrelation handling. The Breusch-Pagan test confirms heteroskedasticity (which we address with HAC standard errors, but imperfectly). And our out-of-sample R² of 0.64% means the vast majority of daily return variance remains unexplained.</p>
 
               <p>We&apos;re not claiming to have solved Bitcoin prediction. We&apos;re claiming to have identified a handful of factors with statistically significant—if modest—predictive power, and to have quantified exactly how significant (and insignificant) each factor is.</p>
-
-              <hr />
-
-              <div className="cta-section">
-                <h3>Stay Updated</h3>
-                <p>We share model updates, methodology improvements, and market analysis on X. Follow us to stay in the loop as this platform evolves.</p>
-                <a href="https://x.com/BitVaultFinance" target="_blank" className="btn btn-primary">
-                  Follow @BitVaultFinance
-                </a>
-              </div>
-
-              <hr />
 
             </div>
           </article>
