@@ -16,7 +16,7 @@ export default function Blog() {
         </header>
 
         <section className="blog-grid" aria-label="Blog posts">
-          <BlogPostCard title="The RWA Yield Landscape: From Tokenized Equities to Volatility Harvesting" excerpt="How the $27B RWA market, on-chain lending against real-world collateral, and volatility harvesting engines are converging to create institutional-grade yield." date="March 26, 2026" link="/blog/rwa-yield-landscape" tag="Research" />
+          <BlogPostCard title="The RWA Yield Landscape: From Tokenized Equities to Volatility Harvesting" excerpt="How the $27B RWA market, on-chain lending against real-world collateral, and volatility harvesting engines are converging to create institutional-grade yield." date="March 26, 2026" link="/blog/rwa-yield-landscape" tag="Research" image="/images/blog/rwa-yield-landscape.svg" />
           <BlogPostCard title="From 59% to 72%: How We Rebuilt Our Bitcoin Signal Model" excerpt="Walk-forward validation exposed critical failures in two classifiers. Here's how we recalibrated our model to achieve 71.9% directional accuracy—and why honest validation is the only path to predictive edge." date="January 28, 2026" link="/blog/model-v351-calibration" tag="Engineering" />
           <BlogPostCard title="Inside BitVault's Bitcoin Analytics Platform: A Quantitative Approach to BTC Signals" excerpt="How we built a Wild Bootstrap OLS regression model with 59% directional accuracy—and what we learned about separating signal from noise. An in-depth look at the methodology behind BitVault's internal Bitcoin analytics platform." date="January 27, 2026" link="/blog/bitcoin-analytics-platform" tag="Research" />
           <BlogPostCard title="Tokenized Equity: The Next Frontier for Stablecoin Collateral" excerpt="How the convergence of DeFi and traditional finance is creating a superior collateral class for institutional stablecoins. Large-cap equities offer 30-day annualized volatility of 15-25%, compared to Bitcoin's typical range of 50-80%." date="January 24, 2026" link="/blog/tokenized-equity" tag="Research" />
@@ -28,13 +28,13 @@ export default function Blog() {
   );
 }
 
-function BlogPostCard({ title, excerpt, date, link, tag }: { title: string, excerpt: string, date: string, link: string, tag: string }) {
+function BlogPostCard({ title, excerpt, date, link, tag, image }: { title: string, excerpt: string, date: string, link: string, tag: string, image?: string }) {
   return (
     <article>
       <Link href={link} legacyBehavior passHref>
         <a className="blog-card">
           <div className="blog-card-image">
-            <img src="/images/background.png" alt={title} loading="lazy" />
+            <img src={image || "/images/background.png"} alt={title} loading="lazy" />
           </div>
           <div className="blog-card-content">
             <div className="blog-card-meta">
