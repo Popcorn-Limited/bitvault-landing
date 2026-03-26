@@ -27,16 +27,16 @@ export default function BlogPost() {
               </div>
 
               <h1 className="article-title">The RWA Yield Landscape: From Tokenized Equities to Volatility Harvesting</h1>
-              <p className="article-subtitle">How the $21B RWA market, on-chain lending against real-world collateral, and volatility harvesting engines are converging to create institutional-grade yield</p>
+              <p className="article-subtitle">How the $27B RWA market, on-chain lending against real-world collateral, and volatility harvesting engines are converging to create institutional-grade yield</p>
             </div>
 
             <div className="article-content">
               <div className="tldr-box">
                 <h3>TL;DR</h3>
                 <ul>
-                  <li><strong>RWA market explosion:</strong> Real-world assets on-chain surged from $5B to over $21B in twelve months. BlackRock&apos;s BUIDL fund alone commands $18B AUM across nine blockchain networks. Tokenized equities have surpassed $1B on-chain for the first time.</li>
-                  <li><strong>Borrowing against RWAs is live:</strong> Aave Horizon Market has reached $197M+ with institutions supplying tokenized RWAs as collateral. Lower volatility means lower overcollateralization&mdash;125% versus 150% for Bitcoin&mdash;freeing $250M in capital per $1B of stablecoin issuance.</li>
-                  <li><strong>Volatility yield is the new frontier:</strong> Yield Basis delivers ~26% BTC APY by solving impermanent loss through leveraged market making. Everlong&apos;s volatility harvesting engine targets 20%+ annualized BTC returns with full price exposure maintained.</li>
+                  <li><strong>RWA market explosion:</strong> Real-world assets on-chain surged from $5B to over $27B in twelve months. Tokenized Treasuries alone have reached $11B, with BlackRock&apos;s BUIDL fund at $2.1B AUM across eight chains. Tokenized equities have surpassed $1B on-chain for the first time.</li>
+                  <li><strong>Borrowing against RWAs is live:</strong> Aave Horizon Market surpassed $50M in deposits within days of launch, with institutions supplying tokenized RWAs as collateral. Lower volatility means lower overcollateralization&mdash;125% versus 150% for Bitcoin&mdash;freeing $250M in capital per $1B of stablecoin issuance.</li>
+                  <li><strong>Volatility yield is the new frontier:</strong> Yield Basis has attracted $130M+ in BTC deposits, delivering yields historically ranging 4-40% APY through leveraged market making. Everlong&apos;s volatility harvesting engine targets 20%+ annualized BTC returns with full price exposure maintained.</li>
                   <li><strong>Three layers, one stack:</strong> Tokenization, lending, and yield strategies are converging into a composable institutional DeFi stack. Capital efficiency improvements at each layer compound as they interconnect.</li>
                   <li><strong>BitVault&apos;s role:</strong> Institutional access to these opportunities through KYC/KYB compliance, regulated custodians, and the bvUSD/sbvUSD stablecoin system delivering 12% APY on stable deposits.</li>
                 </ul>
@@ -46,34 +46,34 @@ export default function BlogPost() {
 
               <h2>1. The RWA Market in Q1 2026</h2>
 
-              <p>Twelve months ago, the total value of real-world assets tokenized on-chain stood at roughly $5 billion. Today, that figure exceeds $21 billion. The growth is not speculative froth&mdash;it is driven by institutional capital deploying into regulated, yield-bearing instruments that happen to live on blockchains.</p>
+              <p>Twelve months ago, the total value of real-world assets tokenized on-chain stood at roughly $5 billion. Today, that figure exceeds $27 billion. The growth is not speculative froth&mdash;it is driven by institutional capital deploying into regulated, yield-bearing instruments that happen to live on blockchains.</p>
 
               <div className="stat-box">
                 <div className="stat-grid">
                   <div className="stat-item">
-                    <div className="stat-value" style={{ color: "#E49D2F" }}>$21B+</div>
+                    <div className="stat-value" style={{ color: "#E49D2F" }}>$27B+</div>
                     <div className="stat-label">Total RWA Market</div>
                   </div>
                   <div className="stat-item">
-                    <div className="stat-value" style={{ color: "#E49D2F" }}>$18B</div>
-                    <div className="stat-label">BlackRock BUIDL AUM</div>
+                    <div className="stat-value" style={{ color: "#E49D2F" }}>$11B</div>
+                    <div className="stat-label">Tokenized Treasuries</div>
                   </div>
                   <div className="stat-item">
                     <div className="stat-value" style={{ color: "#E49D2F" }}>$1B+</div>
                     <div className="stat-label">Tokenized Equities</div>
                   </div>
                   <div className="stat-item">
-                    <div className="stat-value" style={{ color: "#E49D2F" }}>$5.8B</div>
-                    <div className="stat-label">Tokenized Treasuries</div>
+                    <div className="stat-value" style={{ color: "#E49D2F" }}>~3,000%</div>
+                    <div className="stat-label">Equity YoY Growth</div>
                   </div>
                 </div>
               </div>
 
-              <p>The story of Q1 2026 is BlackRock. The BUIDL fund&mdash;a tokenized money market instrument backed by U.S. Treasuries&mdash;has grown to $18 billion in AUM across nine blockchain networks including Ethereum, Solana, Arbitrum, and Avalanche. In February 2026, BUIDL became tradeable on Uniswap via UniswapX, marking the first time a major Wall Street asset manager&apos;s product was directly accessible through a decentralized exchange.</p>
+              <p>The tokenized Treasuries market has reached $11 billion, with BlackRock&apos;s BUIDL fund leading at $2.1 billion in AUM across eight blockchain networks including Ethereum, Solana, Arbitrum, and Avalanche. In February 2026, BUIDL became tradeable on Uniswap via UniswapX, marking the first time a major Wall Street asset manager&apos;s product was directly accessible through a decentralized exchange. Circle&apos;s USYC has since overtaken BUIDL in size, with $2.2 billion deployed primarily as institutional trading collateral on Binance.</p>
 
-              <p>Tokenized equities have crossed the $1 billion threshold for the first time, growing 340% year-over-year. Ondo Finance commands 53% market share, while Kraken&apos;s xStocks platform, Robinhood&apos;s tokenized equity integration, and Coinbase&apos;s stock trading launch have brought major distribution channels online. Monthly trading volume in tokenized stocks now exceeds $1.8 billion.</p>
+              <p>Tokenized equities have crossed the $1 billion threshold for the first time, growing roughly 3,000% year-over-year from a ~$32 million base. Ondo Finance commands 58% market share, followed by Kraken&apos;s xStocks at 24%. Robinhood&apos;s tokenized equity integration and Coinbase&apos;s stock trading launch have brought major distribution channels online. Monthly trading volume in tokenized stocks now exceeds $1.8 billion.</p>
 
-              <p>Perhaps the most significant development is not the headline numbers but the deployment patterns. Roughly 30% of tokenized Treasuries on-chain&mdash;approximately $2.2 billion&mdash;are now actively deployed as collateral in lending protocols rather than sitting idle. These assets are not just tokenized; they are productive.</p>
+              <p>Perhaps the most significant development is not the headline numbers but the deployment patterns. Roughly 20% of tokenized Treasuries on-chain&mdash;over $2.2 billion&mdash;are now actively deployed as collateral in lending protocols and as institutional trading margin rather than sitting idle. These assets are not just tokenized; they are productive.</p>
 
               <hr />
 
@@ -94,7 +94,7 @@ export default function BlogPost() {
                   <tbody>
                     <tr>
                       <td><strong>Aave Horizon</strong></td>
-                      <td style={{ color: "#10b981" }}>$197M+</td>
+                      <td style={{ color: "#10b981" }}>$50M+ at launch</td>
                       <td>Tokenized Treasuries, RWAs</td>
                       <td>4-6%</td>
                     </tr>
@@ -126,7 +126,7 @@ export default function BlogPost() {
                 </table>
               </div>
 
-              <p>Aave&apos;s Horizon Market, launched in August 2025, has become the flagship venue for institutional RWA-collateralized borrowing. With over $197 million in market size and $53 million in active borrows, it demonstrates that institutions will deploy tokenized assets as collateral when the infrastructure meets their standards.</p>
+              <p>Aave&apos;s Horizon Market, launched in August 2025, surpassed $50 million in deposits within days of going live&mdash;demonstrating that institutions will deploy tokenized assets as collateral when the infrastructure meets their standards. The market has continued to grow as more RWA collateral types are integrated.</p>
 
               <p>Centrifuge has quietly built the largest on-chain private credit portfolio, with $1.1 billion in active loans spanning invoices, real estate, and structured products. Their partnership with the Janus Henderson Anemoy Treasury Fund brought institutional credibility, while their infrastructure reduced securitization costs by up to 97% compared to traditional channels.</p>
 
@@ -154,7 +154,7 @@ export default function BlogPost() {
                 </div>
                 <div className="improvement-card highlight">
                   <h4>The Results</h4>
-                  <p>Since launching its BTC pools in late 2025, Yield Basis has delivered approximately <strong>26% annualized BTC yield</strong>, with returns briefly reaching 70% during periods of heightened volatility. Over $130 million in BTC has been deposited into the protocol, backed by a $60 million crvUSD credit line approved by the Curve DAO.</p>
+                  <p>Since launching its BTC pools in late 2025, Yield Basis has attracted over <strong>$130 million in BTC deposits</strong>, with 7-day rolling supply yields historically ranging from 4% to 40% APY depending on market volatility. The protocol is backed by a $60 million crvUSD credit line approved by the Curve DAO.</p>
                 </div>
                 <div className="improvement-card">
                   <h4>Fee Switch Activated</h4>
@@ -205,7 +205,7 @@ export default function BlogPost() {
                   <tbody>
                     <tr>
                       <td><strong>Yield Basis</strong></td>
-                      <td style={{ color: "#10b981" }}>~26% APY</td>
+                      <td style={{ color: "#10b981" }}>4-40% APY</td>
                       <td>Leveraged LP (2x via crvUSD)</td>
                       <td>Full</td>
                       <td style={{ color: "#10b981" }}>Eliminated</td>
@@ -248,7 +248,7 @@ export default function BlogPost() {
 
               <p>These three developments&mdash;RWA tokenization, on-chain lending against real-world collateral, and volatility yield strategies&mdash;are not isolated trends. They are converging into a composable institutional DeFi stack where each layer amplifies the others.</p>
 
-              <p><strong>Layer 1: Tokenization</strong> brings regulated, yield-bearing assets on-chain. BlackRock&apos;s BUIDL, Ondo&apos;s USDY, and Centrifuge&apos;s credit pools convert traditional instruments into programmable collateral. This is the foundation&mdash;without tokenization, nothing else is possible.</p>
+              <p><strong>Layer 1: Tokenization</strong> brings regulated, yield-bearing assets on-chain. BlackRock&apos;s BUIDL, Circle&apos;s USYC, Ondo&apos;s USDY, and Centrifuge&apos;s credit pools convert traditional instruments into programmable collateral. This is the foundation&mdash;without tokenization, nothing else is possible.</p>
 
               <p><strong>Layer 2: Lending</strong> transforms tokenized assets from passive holdings into productive collateral. Aave Horizon, Morpho, and MakerDAO/Sky enable institutional borrowers to access dollar liquidity against their tokenized portfolios. The capital efficiency advantage of lower-volatility RWA collateral compounds at scale.</p>
 
@@ -319,15 +319,15 @@ export default function BlogPost() {
               <div className="endnotes">
                 <h2>Endnotes</h2>
                 <ol>
-                  <li>RWA.xyz analytics, Q1 2026. Total on-chain RWA market exceeding $21B.</li>
-                  <li>BlackRock USD Institutional Digital Liquidity Fund (BUIDL), February 2026. $18B AUM across nine blockchain networks.</li>
-                  <li>DL News, Crypto.com Research. Tokenized equities surpassing $1B on-chain market cap, March 2026.</li>
-                  <li>Ondo Finance market data. 53% market share in tokenized equities; USDY and OUSG product suite.</li>
-                  <li>Aave Horizon Market data, Q1 2026. Market size $197M+; active borrows $53M+.</li>
+                  <li>RWA.xyz analytics, Q1 2026. Total on-chain RWA market exceeding $27B (excluding stablecoins).</li>
+                  <li>RWA.xyz, CoinDesk. Tokenized Treasuries market reaching $11B; BlackRock BUIDL at $2.1B AUM across eight chains; Circle USYC overtaking BUIDL at $2.2B (March 2026).</li>
+                  <li>CoinDesk, Crypto.com Research. Tokenized equities surpassing $1B on-chain, ~3,000% YoY growth from ~$32M base, March 2026.</li>
+                  <li>ainvest.com, Ondo Finance market data. 58% market share in tokenized equities; xStocks at 24%; USDY and OUSG product suite.</li>
+                  <li>crypto.news. Aave Horizon Market surpassed $50M in deposits days after August 2025 launch.</li>
                   <li>Centrifuge portfolio data. $1.1B+ in active on-chain loans across private credit categories.</li>
                   <li>Sentora Research, &quot;Tokenized Equities 2.0: Enabling One-Click Stablecoin Borrowing for Retail Stock Holders,&quot; 2025.</li>
-                  <li>CoinDesk, &quot;Curve Finance Founder Michael Egorov Launches Bitcoin Yield Protocol,&quot; September 2025.</li>
-                  <li>DL News, &quot;Yield Basis activates fee switch after investors deposit $130M Bitcoin,&quot; December 2025.</li>
+                  <li>CoinDesk, &quot;Curve Finance Founder Michael Egorov Launches Bitcoin Yield Protocol,&quot; September 2025. $130M+ BTC deposits confirmed.</li>
+                  <li>DL News, PR Newswire. &quot;Yield Basis activates fee switch: 17.55 BTC in fees await distribution to veYB holders,&quot; December 2025.</li>
                   <li>Blockworks, &quot;Yield Basis wants to be DeFi&apos;s Bitcoin black hole,&quot; 2025.</li>
                   <li>Everlong protocol documentation and backtesting data, Q1 2026.</li>
                   <li>BlockEden, &quot;BlackRock BUIDL on Uniswap,&quot; February 2026.</li>
