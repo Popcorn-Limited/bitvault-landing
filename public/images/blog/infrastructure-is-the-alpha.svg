@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0604"/>
+      <stop offset="50%" style="stop-color:#180e02"/>
+      <stop offset="100%" style="stop-color:#0d0800"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#E49D2F"/>
+      <stop offset="100%" style="stop-color:#F6AE3F"/>
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#E49D2F" stroke-width="0.5">
+    <line x1="0" y1="150" x2="1200" y2="150"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="750"/>
+    <line x1="400" y1="0" x2="400" y2="750"/>
+    <line x1="600" y1="0" x2="600" y2="750"/>
+    <line x1="800" y1="0" x2="800" y2="750"/>
+    <line x1="1000" y1="0" x2="1000" y2="750"/>
+  </g>
+
+  <!-- Ambient glow bottom-left -->
+  <ellipse cx="150" cy="650" rx="300" ry="200" fill="#E49D2F" opacity="0.04" filter="url(#softGlow)"/>
+
+  <!-- Ambient glow top-right -->
+  <ellipse cx="1050" cy="100" rx="250" ry="150" fill="#E49D2F" opacity="0.03" filter="url(#softGlow)"/>
+
+  <!-- Central Shield Visual -->
+  <g transform="translate(600, 340)">
+    <ellipse cx="0" cy="0" rx="140" ry="140" fill="#E49D2F" opacity="0.05" filter="url(#softGlow)"/>
+    <path d="M0,-110 L80,-70 L80,30 Q80,90 0,110 Q-80,90 -80,30 L-80,-70 Z" fill="none" stroke="#E49D2F" stroke-width="2" opacity="0.4"/>
+    <path d="M0,-85 L60,-55 L60,20 Q60,65 0,85 Q-60,65 -60,20 L-60,-55 Z" fill="rgba(228,157,47,0.08)" stroke="#E49D2F" stroke-width="1.5" opacity="0.6"/>
+    <rect x="-20" y="-15" width="40" height="35" rx="4" fill="none" stroke="#E49D2F" stroke-width="2" opacity="0.8"/>
+    <path d="M-12,-15 L-12,-30 Q-12,-45 0,-45 Q12,-45 12,-30 L12,-15" fill="none" stroke="#E49D2F" stroke-width="2" opacity="0.8"/>
+    <circle cx="0" cy="5" r="5" fill="#E49D2F" opacity="0.8"/>
+    <rect x="-2" y="5" width="4" height="10" fill="#E49D2F" opacity="0.8"/>
+    <circle cx="0" cy="0" r="130" fill="none" stroke="#E49D2F" stroke-width="0.5" opacity="0.2" stroke-dasharray="8,8"/>
+    <circle cx="0" cy="0" r="150" fill="none" stroke="#E49D2F" stroke-width="0.5" opacity="0.15" stroke-dasharray="4,12"/>
+  </g>
+
+  <!-- Layer boxes -->
+  <g transform="translate(80, 260)">
+    <rect x="0" y="0" width="180" height="80" rx="6" fill="none" stroke="#E49D2F" stroke-width="1" opacity="0.3"/>
+    <rect x="0" y="0" width="180" height="2" rx="1" fill="url(#gold)" opacity="0.5"/>
+    <text x="15" y="28" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#E49D2F" letter-spacing="1.5" opacity="0.7">Q1 EXPLOITS</text>
+    <text x="15" y="52" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff">$137M Lost</text>
+  </g>
+  <line x1="260" y1="300" x2="430" y2="340" stroke="#E49D2F" stroke-width="1" opacity="0.2" stroke-dasharray="4,4"/>
+
+  <g transform="translate(80, 380)">
+    <rect x="0" y="0" width="180" height="80" rx="6" fill="none" stroke="#E49D2F" stroke-width="1" opacity="0.3"/>
+    <rect x="0" y="0" width="180" height="2" rx="1" fill="url(#gold)" opacity="0.5"/>
+    <text x="15" y="28" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#E49D2F" letter-spacing="1.5" opacity="0.7">INSURANCE GAP</text>
+    <text x="15" y="52" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff">&lt;0.5% Covered</text>
+  </g>
+  <line x1="260" y1="420" x2="430" y2="380" stroke="#E49D2F" stroke-width="1" opacity="0.2" stroke-dasharray="4,4"/>
+
+  <g transform="translate(940, 260)">
+    <rect x="0" y="0" width="180" height="80" rx="6" fill="none" stroke="#E49D2F" stroke-width="1" opacity="0.3"/>
+    <rect x="0" y="0" width="180" height="2" rx="1" fill="url(#gold)" opacity="0.5"/>
+    <text x="15" y="28" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#E49D2F" letter-spacing="1.5" opacity="0.7">AI DEFENSE</text>
+    <text x="15" y="52" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff">Agentic Layer</text>
+  </g>
+  <line x1="940" y1="300" x2="770" y2="340" stroke="#E49D2F" stroke-width="1" opacity="0.2" stroke-dasharray="4,4"/>
+
+  <g transform="translate(940, 380)">
+    <rect x="0" y="0" width="180" height="80" rx="6" fill="none" stroke="#E49D2F" stroke-width="1" opacity="0.3"/>
+    <rect x="0" y="0" width="180" height="2" rx="1" fill="url(#gold)" opacity="0.5"/>
+    <text x="15" y="28" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#E49D2F" letter-spacing="1.5" opacity="0.7">SOVEREIGN BTC</text>
+    <text x="15" y="52" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff">328K US Holdings</text>
+  </g>
+  <line x1="940" y1="420" x2="770" y2="380" stroke="#E49D2F" stroke-width="1" opacity="0.2" stroke-dasharray="4,4"/>
+
+  <!-- Bottom stat pills -->
+  <g transform="translate(120, 590)">
+    <rect x="0" y="0" width="160" height="50" rx="25" fill="rgba(228,157,47,0.08)" stroke="#E49D2F" stroke-width="1" opacity="0.3"/>
+    <text x="80" y="22" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#E49D2F" text-anchor="middle">$137M</text>
+    <text x="80" y="40" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">Q1 2026 Exploits</text>
+  </g>
+  <g transform="translate(330, 590)">
+    <rect x="0" y="0" width="160" height="50" rx="25" fill="rgba(228,157,47,0.08)" stroke="#E49D2F" stroke-width="1" opacity="0.3"/>
+    <text x="80" y="22" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#E49D2F" text-anchor="middle">&lt;0.5%</text>
+    <text x="80" y="40" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">DeFi TVL Insured</text>
+  </g>
+  <g transform="translate(540, 590)">
+    <rect x="0" y="0" width="160" height="50" rx="25" fill="rgba(228,157,47,0.08)" stroke="#E49D2F" stroke-width="1" opacity="0.3"/>
+    <text x="80" y="22" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#E49D2F" text-anchor="middle">$27B+</text>
+    <text x="80" y="40" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">RWA Market</text>
+  </g>
+  <g transform="translate(750, 590)">
+    <rect x="0" y="0" width="160" height="50" rx="25" fill="rgba(228,157,47,0.08)" stroke="#E49D2F" stroke-width="1" opacity="0.3"/>
+    <text x="80" y="22" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#E49D2F" text-anchor="middle">328K BTC</text>
+    <text x="80" y="40" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">US Sovereign Holdings</text>
+  </g>
+
+  <!-- Top-left tag -->
+  <g transform="translate(60, 60)">
+    <rect x="0" y="0" width="80" height="26" rx="13" fill="rgba(228,157,47,0.12)" stroke="#E49D2F" stroke-width="0.5" opacity="0.6"/>
+    <text x="40" y="17" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#E49D2F" text-anchor="middle" letter-spacing="1">RESEARCH</text>
+  </g>
+
+  <!-- Title area -->
+  <text x="60" y="130" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="700" fill="#ffffff">Infrastructure Is the Alpha</text>
+  <text x="60" y="170" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#9ca3af">Q1&apos;s $137M in exploits reveal DeFi&apos;s missing risk layer</text>
+
+  <!-- BitVault watermark -->
+  <text x="1140" y="720" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#E49D2F" text-anchor="end" opacity="0.4" letter-spacing="1">BITVAULT.FINANCE</text>
+
+  <!-- Date -->
+  <text x="60" y="720" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6b7280">April 13, 2026</text>
+</svg>
